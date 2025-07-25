@@ -9,7 +9,7 @@ header:
   actions:
     - label: "View Projects"
       url: "/projects/"
-excerpt: "Cybersecurity blog, research, and tools by Sean Johnson"
+excerpt: "Breaking boundaries in infosec — The CyberAdvisor security lab explores ethical hacking, secure architecture, and threat analysis through hands-on research."
 
 feature_row:
   - image_path: /assets/images/wireguard.png
