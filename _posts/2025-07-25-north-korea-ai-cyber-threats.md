@@ -1,11 +1,17 @@
 ---
-layout: post
+layout: single
 title: "The New Face of Cyber Threats: North Korea, AI, and the Evolution of State-Sponsored Hacking"
 date: 2025-07-25
 categories: [cybersecurity, threat-intelligence, ai]
 tags: [AI, North Korea, threat actors, LLMs, impersonation, fraud, Lazarus]
 author: Sean Johnson
 excerpt: "In 2025, state-backed hackers like North Korea’s Lazarus Group are using AI to scale attacks, deceive hiring teams, and fund regimes. The threat isn't theoretical — it's happening now."
+minimal_mistakes_skin: dark
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
 ---
 
 ## 🕵️‍♂️ TL;DR
