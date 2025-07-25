@@ -1,4 +1,3 @@
-````markdown name=_posts/2025-07-25-north-korea-ai-cyber-threats.md
 ---
 layout: post
 title: "The New Face of Cyber Threats: North Korea, AI, and the Evolution of State-Sponsored Hacking"
@@ -89,4 +88,3 @@ The 2025 threat landscape isn’t just shaped by technology — it’s defined b
 
 *Written by Sean Johnson | CyberAdvisor*  
 *GitHub: [@JohnSeanson](https://github.com/JohnSeanson)*  
-````
