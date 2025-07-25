@@ -1,11 +1,3 @@
----
-layout: post
-title: "North Korea, AI, and the Evolving Cyber Threat"
-date: 2025-07-25
-categories: [cybersecurity, threat-intel, AI]
-author: Sean Johnson
-excerpt: "In 2025, state-backed hackers like North Korea’s Lazarus Group are using AI to scale attacks, deceive hiring teams, and fund regimes. The threat isn't theoretical — it's happening now."
----
 
 Today, the cyber threat landscape is being redrawn by a new generation of attackers — and they’re not just script kiddies in their mom’s basement. Nation-states, in today’s post: **North Korea**, are at the forefront, blending traditional espionage with bleeding-edge AI tactics to fund regimes, bypass defenses, and infiltrate critical industries. Something many believe they couldn’t do.
 
