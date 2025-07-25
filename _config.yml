@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: CyberAvisor R&D
+title: CyberAdvisor 
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   "Cybersecurity blog, research, and projects"
@@ -121,3 +121,4 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+ 
