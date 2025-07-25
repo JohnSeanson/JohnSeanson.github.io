@@ -13,23 +13,28 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: CyberVisor R&D
+title: CyberAvisor R&D
 email:
 description: >- # this means to ignore newlines until "baseurl:"
-  Cybersecurity blog, research, and projects
+  "Cybersecurity blog, research, and projects"
 url: "https://JohnSeanson.github.io"
 author:
- name: Sean Johnson
+ name: "Sean Johnson"
+ avatar: "/assets/images/avatar.png"
  bio:
-  Cybersecurity analyst focused on threat intel, pen testing, and secure infastructure.
+  "Cybersecurity analyst focused on threat intel, pen testing, and secure infastructure."
+ location: "United States"
+ email: "Sjohnsonalpha@outlook.com"
 twitter_username: username
 github_username: JohnSeanson
-minimal_mistakes_skin: contrast
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "contrast"
 search: true
 
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
+minimal_mistakes_skin: "contrast"
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
@@ -61,9 +66,9 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
+  name   : "Sean Johnson"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "Cybersecurity analyst focused on threat intel, pen testing, and secure infastructure."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -96,7 +101,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: splash
+      layout: "splash"
       author_profile: true
       read_time: true
       comments: true
