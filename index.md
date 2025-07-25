@@ -10,7 +10,16 @@ header:
     - label: "View Projects"
       url: "/projects/"
 excerpt: "Cybersecurity blog, research, and tools by Sean Johnson"
+
+feature_row:
+  - image_path: /assets/images/wireguard.png
+    alt: "WireGuard VPN"
+    title: "WireGuard VPN Project"
+    excerpt: "Secure VPN deployment using WireGuard, firewalls, and system hardening."
+    url: "https://github.com/JohnSeanson/wireguard-vpn-project"
 ---
 
 Welcome to my cybersecurity-focused blog and portfolio.
+
+{% include feature_row %}
 
