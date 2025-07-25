@@ -52,7 +52,7 @@ AI is rapidly transforming cybercrime — making it **cheaper, faster, and more 
 
 ## ⚠️ Industry Complacency
 
-One of the most dangerous trends is the **underestimation of AI threats** — especially who has access to these tools. Many organizations falsely assume that “hostile” nations lack cutting-edge AI.
+One of the most dangerous trends is the **underestimation of AI threats** — especially who has access to these tools. Many organizations falsely assume that hostile, or underdeveloped nations, lack cutting-edge AI.
 
 That assumption is proving disastrous.
 
@@ -76,7 +76,7 @@ Meanwhile, defenders are playing catch-up. Many still rely on outdated credentia
 
 The 2025 threat landscape isn’t just shaped by technology — it’s defined by **how that technology is used, and by whom**. Whether you’re a cybersecurity pro, a hiring manager, or just someone logging into a remote job:
 
-> **AI is changing the game — and North Korea is already winning the first round.**
+> **AI is changing the game — and threat actors are not sleeping on its potential.**
 
 ---
 
