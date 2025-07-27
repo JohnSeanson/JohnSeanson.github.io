@@ -14,7 +14,7 @@ share: true
 related: true
 ---
 
-## 🕵️‍♂️ TL;DR
+## TL;DR
 
 - North Korea’s Lazarus Group leverages AI for large-scale IT fraud and cybercrime.
 - AI makes cyber attacks cheaper, faster, and harder to detect.
@@ -24,7 +24,7 @@ related: true
 
 ---
 
-## 🧑‍💻 North Korea’s Playbook: AI, Fake Jobs, Real Damage
+## North Korea’s Playbook: AI, Fake Jobs, Real Damage
 
 North Korea’s **Lazarus Group** — one of the world’s most active and financially motivated threat actors — has moved far beyond stealing crypto wallets. Today, they orchestrate **large-scale IT fraud campaigns** targeting global tech and crypto companies.
 
@@ -40,7 +40,7 @@ North Korea’s **Lazarus Group** — one of the world’s most active and finan
 
 ---
 
-## 🤖 AI: The Double-Edged Sword
+## AI: The Double-Edged Sword
 
 AI is rapidly transforming cybercrime — making it **cheaper, faster, and more convincing** than ever:
 
@@ -50,7 +50,7 @@ AI is rapidly transforming cybercrime — making it **cheaper, faster, and more 
 
 ---
 
-## ⚠️ Industry Complacency
+## Industry Complacency
 
 One of the most dangerous trends is the **underestimation of AI threats** — especially who has access to these tools. Many organizations falsely assume that hostile, or underdeveloped nations, lack cutting-edge AI.
 
@@ -64,7 +64,7 @@ Companies delaying improvements in hiring vetting, MFA enforcement, and phishing
 
 ---
 
-## 💡 Why It Matters
+## Why It Matters
 
 North Korea's focus isn't just disruption — it's **economic survival**. Cybercrime is their business model. And with AI lowering the barrier to entry, expect these operations to scale further.
 
@@ -72,7 +72,7 @@ Meanwhile, defenders are playing catch-up. Many still rely on outdated credentia
 
 ---
 
-## 📝 Final Thoughts
+## Final Thoughts
 
 The 2025 threat landscape isn’t just shaped by technology — it’s defined by **how that technology is used, and by whom**. Whether you’re a cybersecurity pro, a hiring manager, or just someone logging into a remote job:
 
@@ -80,7 +80,7 @@ The 2025 threat landscape isn’t just shaped by technology — it’s defined b
 
 ---
 
-## 📚 References
+## References
 
 [^1]: ICBA, *"North Korea and Virtual Asset Crime"*, 2025.  
 [^2]: CoinDesk, *"North Korea’s Lazarus Group Uses Fake Job Listings to Breach Crypto Companies"*, 2025.  
