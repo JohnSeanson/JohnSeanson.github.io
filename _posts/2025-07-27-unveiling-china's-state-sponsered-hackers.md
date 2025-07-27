@@ -1,7 +1,4 @@
 ---
-
-```yaml
----
 layout: single
 title: "Unveiling China’s State-Sponsored Hackers: Tactics, Campaigns, and Defense (2025)"
 date: 2025-07-27
