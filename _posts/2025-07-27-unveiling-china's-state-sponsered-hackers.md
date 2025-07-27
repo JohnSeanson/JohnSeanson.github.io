@@ -62,7 +62,7 @@ China’s state-sponsored APT groups have refined their craft, blending long-ter
 
 ---
 
-## 🛡Defense & Mitigation
+## Defense & Mitigation
 
 1. **Zero Trust Micro-Segmentation:** Enforce least-privilege access across network segments.  
 2. **Behavioral Analytics (UEBA):** Detect anomalous LotL activity and encrypted C2 channels. [^4]  
