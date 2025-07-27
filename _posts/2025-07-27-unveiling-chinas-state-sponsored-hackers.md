@@ -13,9 +13,7 @@ comments: true
 share: true
 related: true
 ---
-```
 
-```markdown
 ## TL;DR
 
 - 2024 saw a **150% surge** in China-linked cyberattacks against finance, media, and manufacturing. [^1]
@@ -84,6 +82,4 @@ China’s state-sponsored APT groups have refined their craft, blending long-ter
 [^8]: Infosecurity Magazine, *“Fire Ant Campaign Details”*, 2025.
 
 *Written by Sean Johnson | CyberAdvisor*  
-*GitHub: [@JohnSeanson](https://github.com/JohnSeanson)*  
-::contentReference[oaicite:0]{index=0}
-```
+*GitHub: [@JohnSeanson](https://github.com/JohnSeanson)*
