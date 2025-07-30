@@ -1,9 +1,17 @@
 ---
-layout: post
-title:  "Hands‑On SQL Injection Lab: DVWA from Exploit to Patch"
-date: 2025-07-29 18:59:00 -0500
-categories: pentesting web-security sql-injection
+layout: single
+title: "Hands‑On SQL Injection Lab: DVWA from Exploit to Patch"
+date: 2025-07-29
+categories: [pentesting, web-security, sql-injection]
 tags: [DVWA, SQLi, penetration-testing, cyber-security, git]
+author: John Seanson
+excerpt: "A complete walkthrough of exploiting and patching SQL Injection in DVWA, with manual and automated attack, troubleshooting, and secure coding."
+minimal_mistakes_skin: dark
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
 ---
 
 In this lab, we’ll walk through a complete **SQL Injection** lifecycle using the Damn Vulnerable Web Application (DVWA). You’ll learn how to:
