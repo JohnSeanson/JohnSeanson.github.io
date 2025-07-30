@@ -4,10 +4,11 @@
 
 @charset "utf-8";
 
-$accent-color: #00e5ff !default; // Bright cyan
+$accent-color: #e600ff !default;
+ // Plasma Purple
 
 // Import the skin BEFORE the core theme
-@import "minimal-mistakes/skins/dark";
+@import "minimal-mistakes/skins/quantum";
 
 // Then import the theme itself
 @import "minimal-mistakes";
