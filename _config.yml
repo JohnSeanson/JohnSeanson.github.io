@@ -49,7 +49,8 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: splash
+      layout: single
+      css: "/assets/css/custom.css"
       author_profile: true
       read_time: true
       comments: false
