@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Hands‑On SQL Injection Lab: DVWA from Exploit to Patch"
-date:   2025-07-30 09:00:00 -0500
+date:   2025-07-30 08:20:00 -0500
 categories: pentesting web-security sql-injection
 tags: [DVWA, SQLi, penetration-testing, cyber-security, git]
 ---
