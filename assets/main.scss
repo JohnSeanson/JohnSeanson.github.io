@@ -4,11 +4,10 @@
 
 @charset "utf-8";
 
-// Choose your skin (e.g., mint, dark, plum)
-@import "minimal-mistakes/skins/mint";
+// Import the skin BEFORE the core theme
+@import "minimal-mistakes/skins/dark";
 
-// Load core theme styles
+// Then import the theme itself
 @import "minimal-mistakes";
 
-// Optional: Add your custom overrides below
-// $link-color: red;
+// Optional: your overrides below
