@@ -14,12 +14,6 @@ classes: wide
 
 ---
 
-## What You’ll Find
-
-{% include feature_row id="cyber_features" %}
-
----
-
 ## Mission
 
 To **empower learners and practitioners** with clear, actionable cybersecurity knowledge — through building, breaking, and securing real systems.
@@ -29,5 +23,5 @@ To **empower learners and practitioners** with clear, actionable cybersecurity k
 ## Connect
 
 - [GitHub](https://github.com/JohnSeanson)
-- [LinkedIn](https://linkedin.com/in/yourprofile)
-- [Email](mailto:you@example.com)
+- [LinkedIn](https://linkedin.com/in/sean-johnson-520492364)
+- [Email](sjohnsonalpha@outlook.com)
