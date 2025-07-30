@@ -1,0 +1,14 @@
+---
+# Only the main Sass file needs front matter
+---
+
+@charset "utf-8";
+
+// Choose your skin (e.g., mint, dark, plum)
+@import "minimal-mistakes/skins/neon";
+
+// Load core theme styles
+@import "minimal-mistakes";
+
+// Optional: Add your custom overrides below
+// $link-color: red;
