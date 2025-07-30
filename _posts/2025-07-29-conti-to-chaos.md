@@ -1,7 +1,7 @@
 ---
 title: "From Conti to Chaos: A Threat Evolution"
 author: "JohnSeanson"
-date: "2025-07-30"
+date: "2025-07-29"
 minimal_mistakes_skin: dark
 author_profile: true
 read_time: true
