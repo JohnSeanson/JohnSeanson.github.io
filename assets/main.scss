@@ -4,12 +4,12 @@
 
 @charset "utf-8";
 
+$accent-color: #00e5ff !default; // Bright cyan
+
 // Import the skin BEFORE the core theme
 @import "minimal-mistakes/skins/dark";
 
 // Then import the theme itself
 @import "minimal-mistakes";
-
-$accent-color: #00e5ff !default; // Bright cyan
 
 // Optional: your overrides below
