@@ -2,12 +2,9 @@
 layout: page
 title: "About"
 permalink: /about/
-minimal_mistakes_skin: dark
 author_profile: true
-read_time: true
 comments: true
 share: true
-related: true
 ---
 
 ## About CyberAdvisor
