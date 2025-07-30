@@ -1,0 +1,78 @@
+/* --- Fonts --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #2c3e50;
+  letter-spacing: 0.03em;
+}
+
+body, p, li {
+  font-family: 'Open Sans', sans-serif;
+  color: #444444;
+  line-height: 1.6;
+}
+
+/* --- Links --- */
+a {
+  color: #1e90ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #104e8b;
+  text-decoration: underline;
+}
+
+/* --- Buttons --- */
+.button, .btn {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover, .btn:hover {
+  background-color: #104e8b;
+}
+
+/* --- Callouts --- */
+.callout {
+  border-left: 5px solid #1e90ff;
+  background-color: #f0f8ff;
+  padding: 1em 1.2em;
+  margin: 1.5em 0;
+  border-radius: 4px;
+  color: #2c3e50;
+}
+
+/* --- Code blocks --- */
+.highlight {
+  background-color: #f4f4f4 !important;
+  border-radius: 6px !important;
+  padding: 1em !important;
+  font-family: 'Fira Mono', monospace;
+}
+
+/* --- Hero image style --- */
+.hero-img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin: 2em 0;
+}
+
+/* --- Quote box --- */
+blockquote {
+  font-size: 1.1em;
+  color: #2c3e50;
+  border-left: 4px solid #1e90ff;
+  padding-left: 1em;
+  margin: 2em 0;
+}
