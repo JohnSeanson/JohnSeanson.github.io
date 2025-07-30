@@ -37,7 +37,7 @@ references:
 
 In the realm of ransomware, understanding how one family morphs into another is crucial for staying ahead of attacks. This report traces the evolutionary path from the notorious Conti ransomware syndicate, through the rise of Royal and its rebrand as BlackSuit, and ultimately to the modern Chaos RaaS operation. We’ll explore how Tactics, Techniques, and Procedures (TTPs) are shared, refined, and repackaged by successive affiliates—revealing the interconnected underworld of ransomware development.
 
-A companion research lab will be published in relation to this report, exploring various methods used in ransomware attacks, key vulnerabilities that are exploited, and defensive strategies to prevent data extortion. Stay tuned at [github.com/johnseanson](https://github.com/johnseanson).
+A companion research lab will be published in relation to this report, exploring various methods used in ransomware attacks, key vulnerabilities that are exploited, and defensive strategies to prevent data exfiltration. Stay tuned at [github.com/johnseanson](https://github.com/johnseanson).
 
 ---
 
