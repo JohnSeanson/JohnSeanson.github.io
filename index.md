@@ -17,17 +17,13 @@ feature_row:
     title: "WireGuard VPN Project"
     excerpt: "Secure VPN deployment using WireGuard, firewalls, and system hardening."
     url: "https://github.com/JohnSeanson/wireguard-vpn-project"
-
-- [DVWA SQL Injection Lab](/projects/sql-injection-lab)  
-  alt: "SQL Injection"
-  title: "SQL Injection Project"
-  excerpt: "A hands‑on pentest of DVWA using manual techniques and `sqlmap`, plus secure patching."
-  url: "https://github.com/JohnSeanson/sql-injection-dvwa-lab"
-  
-
+  - image_path: /assets/images/sqlinjection.png
+    alt: "SQL Injection"
+    title: "SQL Injection Project"
+    excerpt: "A hands‑on pentest of DVWA using manual techniques and `sqlmap`, plus secure patching."
+    url: "https://github.com/JohnSeanson/sql-injection-dvwa-lab"
 ---
 
 Welcome to my cybersecurity-focused blog and portfolio.
 
 {% include feature_row %}
-
