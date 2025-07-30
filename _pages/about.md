@@ -1,8 +1,23 @@
 ---
-permalink: /about/
+layout: page
 title: "About"
+permalink: /about/
+minimal_mistakes_skin: dark
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+## About CyberAdvisor
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+**CyberAdvisor** is a personal cybersecurity blog by Sean Johnson, focused on practical security projects, threat research, and tools for aspiring professionals. Whether it's building secure systems, testing vulnerabilities, or exploring the latest cyber threats, this blog shares hands-on insights from real-world experimentation.
+
+**What you’ll find here:**
+- Walkthroughs of security projects 
+- Research on malware, ransomware, and threat actors
+- Tips and tools for starting a career in cybersecurity
+
+**Mission:**  
+Empower learners and practitioners with clear, actionable cybersecurity knowledge.
