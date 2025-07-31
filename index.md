@@ -26,4 +26,6 @@ feature_row:
 
 Welcome to my cybersecurity-focused blog and portfolio.
 
+## Featured Projects
+
 {% include feature_row %}
