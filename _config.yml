@@ -1,6 +1,5 @@
 # Site Settings
 title: CyberAdvisor
-# email: "Sjohnsonalpha@outlook.com"
 description: >-
   Cybersecurity blog, research, and projects.
 baseurl: "" # Only needed if deploying under a subpath
@@ -12,7 +11,6 @@ author:
   avatar: "/assets/images/logo.png"
   bio: "Cybersecurity analyst focused on threat intel, pen testing, and secure infrastructure."
   location: "United States"
-  email: "Sjohnsonalpha@outlook.com"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
