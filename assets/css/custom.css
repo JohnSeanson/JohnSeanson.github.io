@@ -366,12 +366,28 @@ button:hover,
 a:hover {
   box-shadow: 0 0 8px var(--shadow-accent);
 }
-#search-results {
-  margin-top: 1rem;
-  padding-left: 1rem;
-  list-style: none;
+.nav-search {
+  position: relative; /* already set */
 }
 
+#search-results {
+  position: absolute;
+  top: 100%; /* right below the search input */
+  left: 0;
+  right: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: var(--main-bg);
+  border: 1px solid var(--accent);
+  border-radius: 0 0 12px 12px;
+  padding: 0.5em 1em;
+  margin-top: 0.1em;
+  z-index: 200;
+  list-style: none;
+  box-shadow: 0 4px 8px rgba(0, 204, 204, 0.3);
+}
+
+/* Search result items */
 #search-results li {
   margin-bottom: 0.5rem;
 }
@@ -380,5 +396,15 @@ a:hover {
   color: var(--accent);
   text-decoration: none;
   font-weight: 600;
+  display: block;
+  padding: 0.25em 0;
 }
+
+#search-results li a:hover,
+#search-results li a:focus {
+  background-color: var(--callout-bg);
+  outline: none;
+}
+
+
 
