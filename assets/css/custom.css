@@ -260,5 +260,54 @@ blockquote {
 
   .search-form input[type="search"] {
     width: 100%;
+
+    /* === FIXED SEARCH BAR STYLE === */
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.search-form input[type="search"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #1a1a1a;
+  color: #66f0ff;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.4em 1em;
+  font-size: 0.9em;
+  box-shadow: 0 0 6px rgba(0, 255, 255, 0.4);
+  outline: none;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  width: 180px;
+}
+
+.search-form input[type="search"]::placeholder {
+  color: #88c0ff;
+  opacity: 0.6;
+}
+
+.search-form input[type="search"]:focus {
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  background-color: #222;
+}
+
+.search-form button {
+  background: #1e90ff;
+  border: none;
+  color: white;
+  padding: 0.4em 0.8em;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+  background: #104e8b;
   }
 }
