@@ -3,17 +3,17 @@
 
 /* --- CSS Variables for Easy Theming --- */
 :root {
-  --main-bg: #f4f4f4;           /* Soft gray background */
-  --main-text: #111111;         /* Charcoal text */
-  --title-color: #222222;       /* Slightly lighter charcoal for headings */
-  --accent: #5a9a8d;            /* Muted teal accent */
-  --accent-hover: #3f7f74;      /* Darker teal hover */
-  --callout-bg: #ddeee9;        /* Light teal background */
-  --quote-bg: #eef9f7;          /* Very light teal */
-  --button-border: #333333;     /* Dark gray for button borders */
+  --main-bg: #f8f9fa;
+  --main-text: #111111;
+  --title-color: #333333;
+  --accent: #00cccc;
+  --accent-hover: #009999;
+  --callout-bg: #e0f7f7;
+  --quote-bg: #f0ffff;
+  --button-border: #333333;
   --button-hover-bg: var(--accent);
-  --button-hover-color: #ffffff;
-  --shadow-accent: rgba(90, 154, 141, 0.25); /* Teal glow, subtle */
+  --button-hover-color: #111111;
+  --shadow-accent: rgba(0, 204, 204, 0.2);
 }
 
 /* --- Box sizing --- */
@@ -21,7 +21,7 @@
   box-sizing: border-box;
 }
 
-/* --- Base Styles --- */
+/* --- Base styles --- */
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: var(--main-bg);
@@ -29,9 +29,10 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* --- Page Container --- */
+/* --- Page container --- */
 .page {
   background-color: #ffffff;
   border-radius: 12px;
@@ -45,13 +46,13 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: var(--title-color);
+  color: #0a0a0a;
   letter-spacing: 0.03em;
   line-height: 1.2;
   margin-top: 0;
 }
 
-/* --- Text --- */
+/* --- Paragraphs and lists --- */
 p, li {
   font-size: 1rem;
 }
@@ -63,6 +64,7 @@ a {
   font-weight: 600;
   transition: color 0.3s ease;
 }
+
 a:hover {
   color: var(--accent);
   text-decoration: underline;
@@ -79,34 +81,41 @@ a:hover {
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease;
   font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px var(--shadow-accent);
 }
+
 .button:hover, .btn:hover {
   background-color: var(--button-hover-bg);
   color: var(--button-hover-color);
-  border-color: var(--accent-hover);
+  border-color: var(--button-hover-bg);
+  box-shadow: 0 0 12px var(--shadow-accent);
 }
 
 /* --- Callouts --- */
 .callout {
-  border-left: 6px solid var(--accent);
+  border-left: 6px solid var(--button-border);
   background-color: var(--callout-bg);
   padding: 1em 1.2em;
   margin: 1.5em 0;
   border-radius: 6px;
   color: var(--main-text);
+  box-shadow: 0 0 8px var(--shadow-accent);
 }
 
 /* --- Code blocks --- */
 .highlight {
-  background-color: #222;
+  background-color: #222222;
   border-radius: 8px;
   padding: 1em;
   font-family: 'Fira Mono', monospace;
   color: #f8f8f2;
   overflow-x: auto;
+  box-shadow: 0 0 8px var(--shadow-accent);
 }
+
+/* --- Scrollbar --- */
 .highlight::-webkit-scrollbar {
   height: 8px;
 }
@@ -115,32 +124,33 @@ a:hover {
   border-radius: 4px;
 }
 
-/* --- Hero Image --- */
+/* --- Hero image --- */
 .hero-img {
   width: 100%;
-  height: auto;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(90, 154, 141, 0.3);
+  box-shadow: 0 6px 16px rgba(0, 204, 204, 0.4);
   margin: 2em 0;
 }
 
-/* --- Quotes --- */
+/* --- Blockquotes --- */
 blockquote {
   font-size: 1.1em;
-  color: #222;
+  color: #222222;
   border-left: 6px solid var(--accent);
   padding-left: 1em;
   margin: 2em 0;
   background-color: var(--quote-bg);
   border-radius: 6px;
+  box-shadow: 0 0 10px #00cccc44;
 }
 
-/* --- Navigation Bar --- */
+/* --- Navigation --- */
 .site-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: nowrap;
+  gap: 1rem;
+  flex-wrap: wrap;
   padding: 1rem 2rem;
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -156,7 +166,6 @@ blockquote {
   text-decoration: none;
 }
 
-/* Horizontal nav links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -164,40 +173,47 @@ blockquote {
   margin: 0;
   padding: 0;
 }
+
 .nav-links li a {
   color: var(--title-color);
   text-decoration: none;
   font-weight: 700;
   font-size: 1rem;
+  transition: color 0.3s ease;
 }
+
 .nav-links li a:hover {
   color: var(--accent);
   text-decoration: underline;
 }
 
-/* --- Search Bar --- */
+/* --- Search --- */
 .nav-search {
   display: flex;
   align-items: center;
-  margin-left: auto;
   position: relative;
+  margin-left: auto;
 }
+
+.nav-search input[type="text"],
 .nav-search input[type="search"] {
   padding: 0.4em 0.8em;
   border-radius: 20px;
-  border: 2px solid var(--accent);
-  background-color: #fff;
+  border: 2px solid #ccc;
+  background-color: var(--main-bg);
   color: var(--main-text);
   font-weight: 600;
   width: 180px;
-  transition: border-color 0.3s ease;
   box-shadow: none;
+  transition: all 0.3s ease;
 }
+
 .nav-search input[type="search"]:focus {
   outline: none;
-  border-color: var(--accent-hover);
-  box-shadow: none; /* Removes glowing box */
+  border-color: var(--accent);
+  box-shadow: none;
 }
+
 .nav-search button {
   position: absolute;
   right: 6px;
@@ -206,41 +222,22 @@ blockquote {
   cursor: pointer;
   font-size: 1.2rem;
   color: var(--button-border);
+  transition: color 0.3s ease;
 }
+
 .nav-search button:hover {
   color: var(--accent);
 }
 
-/* Responsive nav */
-@media (max-width: 768px) {
-  .site-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .nav-search {
-    align-self: stretch;
-    width: 100%;
-    justify-content: center;
-  }
-  .nav-search input[type="search"] {
-    width: 100%;
-  }
-}
-
-/* --- Title and Post Colors --- */
+/* --- Site titles --- */
 .site-title, .site-title a {
   color: var(--title-color) !important;
 }
+
 h1.entry-title, h2.entry-title, .page-title, .post-title {
   color: var(--title-color) !important;
 }
-h1.entry-title a:hover,
-h2.entry-title a:hover {
+h1.entry-title a:hover, h2.entry-title a:hover {
   color: var(--accent) !important;
   text-decoration: underline;
 }
@@ -250,6 +247,77 @@ h2.entry-title a:hover {
   background-color: var(--main-bg);
   padding: 1.5em 2em;
   text-align: center;
-  color: #666;
+  color: #666666;
   font-size: 0.9rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .site-nav {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+  .nav-links {
+    justify-content: center;
+    gap: 1rem;
+  }
+  .nav-search {
+    width: 100%;
+    justify-content: center;
+  }
+  .nav-search input[type="text"],
+  .nav-search input[type="search"] {
+    width: 100%;
+  }
+}
+
+/* ===========================
+   DARK MODE STYLES
+=========================== */
+body.dark-mode {
+  background-color: #111111;
+  color: #f5f7fa;
+}
+
+body.dark-mode .page,
+body.dark-mode .site-nav,
+body.dark-mode .site-footer {
+  background-color: #1e1e1e;
+  color: #f5f7fa;
+  box-shadow: none;
+}
+
+body.dark-mode .site-title,
+body.dark-mode .site-title a,
+body.dark-mode h1.entry-title,
+body.dark-mode h2.entry-title,
+body.dark-mode .page-title,
+body.dark-mode .post-title,
+body.dark-mode .nav-links li a {
+  color: #f0f0f0 !important;
+}
+
+body.dark-mode a {
+  color: #00cccc;
+}
+body.dark-mode a:hover {
+  color: #00eeee;
+}
+
+body.dark-mode .highlight {
+  background-color: #1e1e1e;
+  color: #f5f7fa;
+}
+
+body.dark-mode .nav-search input[type="search"],
+body.dark-mode .nav-search input[type="text"] {
+  background-color: #222;
+  color: #fff;
+  border-color: #00cccc;
+  box-shadow: none;
+}
+
+body.dark-mode .nav-search button {
+  color: #00cccc;
 }
