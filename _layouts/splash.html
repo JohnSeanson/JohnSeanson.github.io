@@ -1,35 +1,42 @@
 ---
-layout: splash
+layout: default
 ---
 
 {% assign splash = page.header | default: site.header %}
+
 <div class="splash-header" role="banner">
 
   {% if splash.overlay_image %}
     <div class="page__hero--overlay" style="background-image: url('{{ splash.overlay_image | relative_url }}');">
-      <div class="overlay-content">
-        {% if splash.title %}
-          <h1 class="page__title">{{ splash.title }}</h1>
-        {% endif %}
-        {% if splash.subtitle %}
-          <p class="page__subtitle">{{ splash.subtitle }}</p>
-        {% endif %}
-        {% if splash.cta_url %}
-          <a href="{{ splash.cta_url | relative_url }}" class="btn">{{ splash.cta_text | default: "Learn More" }}</a>
-        {% endif %}
+      <div class="wrapper">
+        <div class="page__hero--content">
+          {% if splash.title %}
+            <h1 class="page__title">{{ splash.title }}</h1>
+          {% endif %}
+          {% if splash.subtitle %}
+            <p class="page__subtitle">{{ splash.subtitle }}</p>
+          {% endif %}
+          {% if splash.cta_url %}
+            <a href="{{ splash.cta_url | relative_url }}" class="btn">{{ splash.cta_text | default: "Learn More" }}</a>
+          {% endif %}
+        </div>
       </div>
     </div>
   {% else %}
     <div class="splash-header--no-img">
-      {% if splash.title %}
-        <h1 class="page__title">{{ splash.title }}</h1>
-      {% endif %}
-      {% if splash.subtitle %}
-        <p class="page__subtitle">{{ splash.subtitle }}</p>
-      {% endif %}
-      {% if splash.cta_url %}
-        <a href="{{ splash.cta_url | relative_url }}" class="btn">{{ splash.cta_text | default: "Learn More" }}</a>
-      {% endif %}
+      <div class="wrapper">
+        <div class="page__hero--content">
+          {% if splash.title %}
+            <h1 class="page__title">{{ splash.title }}</h1>
+          {% endif %}
+          {% if splash.subtitle %}
+            <p class="page__subtitle">{{ splash.subtitle }}</p>
+          {% endif %}
+          {% if splash.cta_url %}
+            <a href="{{ splash.cta_url | relative_url }}" class="btn">{{ splash.cta_text | default: "Learn More" }}</a>
+          {% endif %}
+        </div>
+      </div>
     </div>
   {% endif %}
 
