@@ -244,19 +244,19 @@ h1.entry-title a:hover, h2.entry-title a:hover {
 
 /* --- Footer --- */
 .site-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   background-color: var(--main-bg);
   padding: 1.5em 2em;
-  text-align: center;
   color: #666666;
   font-size: 0.9rem;
-  position: relative; /* for flex positioning */
+  position: relative; /* for any absolutely positioned children */
 }
 
 /* --- Dark Mode Toggle - Right Aligned and Smaller Text --- */
 .dark-mode-toggle {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 1em;
+  /* flex is handled by footer */
 }
 
 .dark-mode-toggle button {
@@ -301,4 +301,54 @@ body.dark-mode .dark-mode-toggle button:hover {
   .nav-search input[type="search"] {
     width: 100%;
   }
+}
+
+/* ===========================
+   DARK MODE STYLES
+=========================== */
+body.dark-mode {
+  background-color: #111111 !important;
+  color: #f5f7fa !important;
+}
+
+body.dark-mode .page,
+body.dark-mode .site-nav,
+body.dark-mode .site-footer {
+  background-color: #1e1e1e !important;
+  color: #f5f7fa !important;
+  box-shadow: none !important;
+}
+
+body.dark-mode .site-title,
+body.dark-mode .site-title a,
+body.dark-mode h1.entry-title,
+body.dark-mode h2.entry-title,
+body.dark-mode .page-title,
+body.dark-mode .post-title,
+body.dark-mode .nav-links li a {
+  color: #f0f0f0 !important;
+}
+
+body.dark-mode a {
+  color: #00cccc !important;
+}
+body.dark-mode a:hover {
+  color: #00eeee !important;
+}
+
+body.dark-mode .highlight {
+  background-color: #1e1e1e !important;
+  color: #f5f7fa !important;
+}
+
+body.dark-mode .nav-search input[type="search"],
+body.dark-mode .nav-search input[type="text"] {
+  background-color: #222 !important;
+  color: #fff !important;
+  border-color: #00cccc !important;
+  box-shadow: none !important;
+}
+
+body.dark-mode .nav-search button {
+  color: #00cccc !important;
 }
