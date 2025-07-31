@@ -1,142 +1,255 @@
-/* === Global Resets === */
+/* --- Import Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Fira+Mono&display=swap');
+
+/* --- CSS Variables for Easy Theming --- */
+:root {
+  --main-bg: #f4f4f4;           /* Soft gray background */
+  --main-text: #111111;         /* Charcoal text */
+  --title-color: #222222;       /* Slightly lighter charcoal for headings */
+  --accent: #5a9a8d;            /* Muted teal accent */
+  --accent-hover: #3f7f74;      /* Darker teal hover */
+  --callout-bg: #ddeee9;        /* Light teal background */
+  --quote-bg: #eef9f7;          /* Very light teal */
+  --button-border: #333333;     /* Dark gray for button borders */
+  --button-hover-bg: var(--accent);
+  --button-hover-color: #ffffff;
+  --shadow-accent: rgba(90, 154, 141, 0.25); /* Teal glow, subtle */
+}
+
+/* --- Box sizing --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* --- Base Styles --- */
 body {
-  background-color: #f9f9f9;
-  color: #111111;
-  font-family: "Segoe UI", Roboto, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--main-bg);
+  color: var(--main-text);
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
+/* --- Page Container --- */
+.page {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  padding: 2em;
+  max-width: 960px;
+  margin: 2em auto;
+}
+
+/* --- Headings --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--title-color);
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+/* --- Text --- */
+p, li {
+  font-size: 1rem;
+}
+
+/* --- Links --- */
 a {
-  color: #3f51b5;
+  color: var(--title-color);
   text-decoration: none;
-  transition: color 0.2s ease;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
-
-a:hover,
-a:focus {
-  color: #303f9f;
+a:hover {
+  color: var(--accent);
   text-decoration: underline;
 }
 
-/* === Header & Navigation === */
-.site-header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
+/* --- Buttons --- */
+.button, .btn {
+  background-color: transparent;
+  color: var(--button-border);
+  border: 2px solid var(--button-border);
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  font-size: 1em;
+}
+.button:hover, .btn:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-color);
+  border-color: var(--accent-hover);
+}
+
+/* --- Callouts --- */
+.callout {
+  border-left: 6px solid var(--accent);
+  background-color: var(--callout-bg);
+  padding: 1em 1.2em;
+  margin: 1.5em 0;
+  border-radius: 6px;
+  color: var(--main-text);
+}
+
+/* --- Code blocks --- */
+.highlight {
+  background-color: #222;
+  border-radius: 8px;
+  padding: 1em;
+  font-family: 'Fira Mono', monospace;
+  color: #f8f8f2;
+  overflow-x: auto;
+}
+.highlight::-webkit-scrollbar {
+  height: 8px;
+}
+.highlight::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 4px;
+}
+
+/* --- Hero Image --- */
+.hero-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(90, 154, 141, 0.3);
+  margin: 2em 0;
+}
+
+/* --- Quotes --- */
+blockquote {
+  font-size: 1.1em;
+  color: #222;
+  border-left: 6px solid var(--accent);
+  padding-left: 1em;
+  margin: 2em 0;
+  background-color: var(--quote-bg);
+  border-radius: 6px;
+}
+
+/* --- Navigation Bar --- */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
   padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .site-logo {
-  color: #3f51b5;
-  font-weight: bold;
-  font-size: 1.5rem;
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--title-color);
+  text-decoration: none;
 }
 
-/* === Navigation Links === */
-.site-nav .nav-links a {
-  color: #3f51b5;
-  margin-right: 1rem;
+/* Horizontal nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li a {
+  color: var(--title-color);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.nav-links li a:hover {
+  color: var(--accent);
+  text-decoration: underline;
 }
 
-.site-nav .nav-links a:hover {
-  color: #303f9f;
-}
-
-/* === Search Bar === */
+/* --- Search Bar --- */
 .nav-search {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  margin-left: auto;
+  position: relative;
 }
-
 .nav-search input[type="search"] {
-  padding: 0.5rem 1rem;
-  border: 1px solid #3f51b5;
-  background-color: #ffffff;
-  color: #111111;
-  border-radius: 5px;
-  font-size: 0.95rem;
-  outline: none;
-}
-
-.nav-search input[type="search"]:focus {
-  border-color: #303f9f;
+  padding: 0.4em 0.8em;
+  border-radius: 20px;
+  border: 2px solid var(--accent);
+  background-color: #fff;
+  color: var(--main-text);
+  font-weight: 600;
+  width: 180px;
+  transition: border-color 0.3s ease;
   box-shadow: none;
 }
-
+.nav-search input[type="search"]:focus {
+  outline: none;
+  border-color: var(--accent-hover);
+  box-shadow: none; /* Removes glowing box */
+}
 .nav-search button {
-  background-color: #3f51b5;
-  color: #ffffff;
+  position: absolute;
+  right: 6px;
+  background: transparent;
   border: none;
-  padding: 0.5rem 0.75rem;
-  border-radius: 5px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 1.2rem;
+  color: var(--button-border);
 }
-
 .nav-search button:hover {
-  background-color: #303f9f;
+  color: var(--accent);
 }
 
-/* === Buttons (Global) === */
-button,
-.btn {
-  background-color: #3f51b5;
-  color: #ffffff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
+/* Responsive nav */
+@media (max-width: 768px) {
+  .site-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .nav-search {
+    align-self: stretch;
+    width: 100%;
+    justify-content: center;
+  }
+  .nav-search input[type="search"] {
+    width: 100%;
+  }
 }
 
-button:hover,
-.btn:hover {
-  background-color: #303f9f;
+/* --- Title and Post Colors --- */
+.site-title, .site-title a {
+  color: var(--title-color) !important;
+}
+h1.entry-title, h2.entry-title, .page-title, .post-title {
+  color: var(--title-color) !important;
+}
+h1.entry-title a:hover,
+h2.entry-title a:hover {
+  color: var(--accent) !important;
+  text-decoration: underline;
 }
 
-/* === Post Titles & Links === */
-h1, h2, h3, h4, h5, h6 {
-  color: #111111;
-}
-
-.post-title a {
-  color: #3f51b5;
-}
-
-.post-title a:hover {
-  color: #303f9f;
-}
-
-/* === Footer === */
+/* --- Footer --- */
 .site-footer {
-  background-color: #ffffff;
-  color: #666666;
-  padding: 2rem;
-  border-top: 1px solid #e0e0e0;
+  background-color: var(--main-bg);
+  padding: 1.5em 2em;
   text-align: center;
-}
-
-/* === Author Box / Profile === */
-.author__name,
-.author__bio {
-  color: #111111;
-}
-
-.author__links a {
-  color: #3f51b5;
-}
-
-.author__links a:hover {
-  color: #303f9f;
-}
-
-/* === Code Blocks === */
-pre,
-code {
-  background-color: #eeeeee;
-  color: #1a1a1a;
-  font-family: "Courier New", Courier, monospace;
-  padding: 0.2em 0.4em;
-  border-radius: 3px;
+  color: #666;
+  font-size: 0.9rem;
 }
