@@ -1,9 +1,9 @@
 ---
-layout: splash
+layout: home
 title: "Welcome"
 permalink: /
 header:
-  overlay_color: "#00000000"
+  overlay_color: ""
   overlay_filter: "0"
   actions:
     - label: "View Projects"
