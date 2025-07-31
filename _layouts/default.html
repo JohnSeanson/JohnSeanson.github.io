@@ -27,14 +27,11 @@
     <li><a href="{{ '/tags/' | relative_url }}">Tags</a></li>
   </ul>
 
-  <!-- Updated Search Input and Results Container -->
+  <!-- Search Input (results container moved to bottom) -->
   <div class="nav-search" role="search" aria-label="Site search">
     <input type="search" id="search-input" placeholder="Search…" aria-label="Search site" autocomplete="off" />
-    <ul id="search-results" aria-live="polite" aria-label="Search results"></ul>
   </div>
 </nav>
-
-</header>
 
 <div class="site-main">
   {{ content }}
@@ -88,6 +85,9 @@
 <!-- Simple-Jekyll-Search Script -->
 <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
 
+<!-- Search Results Container (now outside nav/header) -->
+<ul id="search-results" aria-live="polite" aria-label="Search results"></ul>
+
 <script>
   const searchInput = document.querySelector('#search-input');
   const resultsContainer = document.querySelector('#search-results');
@@ -98,9 +98,31 @@
       resultsContainer: resultsContainer,
       json: '/search.json',
       searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
-      noResultsText: 'No results found',
+      noResultsText: '<li>No results found</li>',
       limit: 10,
       fuzzy: false
+    });
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim();
+      if (query.length > 0) {
+        resultsContainer.classList.add('active');
+        resultsContainer.style.display = 'block';
+      } else {
+        resultsContainer.classList.remove('active');
+        resultsContainer.style.display = 'none';
+      }
+    });
+
+    // Optional: hide panel on click outside
+    document.addEventListener('click', (e) => {
+      if (
+        !searchInput.contains(e.target) &&
+        !resultsContainer.contains(e.target)
+      ) {
+        resultsContainer.classList.remove('active');
+        resultsContainer.style.display = 'none';
+      }
     });
   }
 </script>
