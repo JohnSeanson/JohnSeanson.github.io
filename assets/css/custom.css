@@ -8,8 +8,8 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #f5f7fa; /* Light grayish-white background */
-  color: #111111; /* Dark charcoal text for contrast */
+  background-color: #f5f7fa;
+  color: #111111;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -19,7 +19,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: #0a0a0a; /* Almost black */
+  color: #0a0a0a;
   letter-spacing: 0.03em;
   line-height: 1.2;
   margin-top: 0;
@@ -33,47 +33,47 @@ p, li {
 
 /* --- Links --- */
 a {
-  color: #007bff; /* Electric Blue */
+  color: #333333;
   text-decoration: none;
-  transition: color 0.3s ease;
   font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #ff4500; /* Vivid Orange */
+  color: #00ffff;
   text-decoration: underline;
 }
 
-/* --- Minimalist Button & Link Styles --- */
-.button, .btn, a.button {
+/* --- Buttons --- */
+.button, .btn {
   background-color: transparent;
-  color: #111111;
-  border: 2px solid #111111;
-  padding: 0.5em 1em;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 1em;
+  color: #333333;
+  border: 2px solid #333333;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  font-weight: 700;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  font-size: 1em;
 }
 
-.button:hover, .btn:hover, a.button:hover {
-  background-color: #111111;
-  color: #ffffff;
-  border-color: #111111;
+.button:hover, .btn:hover {
+  background-color: #00ffff;
+  color: #111111;
+  border-color: #00ffff;
 }
 
 /* --- Callouts --- */
 .callout {
-  border-left: 6px solid #007bff;
-  background-color: #e0e7ff; /* Soft electric blue tint */
+  border-left: 6px solid #333333;
+  background-color: #e0e7ff;
   padding: 1em 1.2em;
   margin: 1.5em 0;
   border-radius: 6px;
   color: #111111;
-  box-shadow: 0 0 8px #007bff44;
+  box-shadow: 0 0 8px #00ffff44;
 }
 
 /* --- Code blocks --- */
@@ -84,7 +84,7 @@ a:hover {
   font-family: 'Fira Mono', monospace;
   color: #f8f8f2;
   overflow-x: auto;
-  box-shadow: 0 0 8px #007bff88;
+  box-shadow: 0 0 8px #00ffff88;
 }
 
 /* Custom scrollbar for code blocks */
@@ -93,7 +93,7 @@ a:hover {
 }
 
 .highlight::-webkit-scrollbar-thumb {
-  background-color: #007bff;
+  background-color: #00ffff;
   border-radius: 4px;
 }
 
@@ -103,7 +103,7 @@ a:hover {
   max-width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+  box-shadow: 0 6px 16px rgba(0, 255, 255, 0.4);
   margin: 2em 0;
 }
 
@@ -111,12 +111,12 @@ a:hover {
 blockquote {
   font-size: 1.1em;
   color: #222222;
-  border-left: 6px solid #ff4500;
+  border-left: 6px solid #00ffff;
   padding-left: 1em;
   margin: 2em 0;
-  background-color: #fff3f0;
+  background-color: #f0ffff;
   border-radius: 6px;
-  box-shadow: 0 0 10px #ff450044;
+  box-shadow: 0 0 10px #00ffff44;
 }
 
 /* --- Navigation Bar --- */
@@ -137,7 +137,7 @@ blockquote {
 .site-logo {
   font-weight: 700;
   font-size: 1.75rem;
-  color: #007bff;
+  color: #333333;
   text-decoration: none;
 }
 
@@ -150,7 +150,7 @@ blockquote {
 }
 
 .nav-links li a {
-  color: #111111;
+  color: #333333;
   text-decoration: none;
   font-weight: 700;
   font-size: 1rem;
@@ -158,7 +158,7 @@ blockquote {
 }
 
 .nav-links li a:hover {
-  color: #ff4500;
+  color: #00ffff;
   text-decoration: underline;
 }
 
@@ -169,27 +169,25 @@ blockquote {
   position: relative;
 }
 
-/* ✨ Gradient border around the search input */
 .nav-search input[type="text"],
 .nav-search input[type="search"] {
   padding: 0.4em 0.8em;
-  border: 2px solid transparent;
   border-radius: 20px;
-  background-image: linear-gradient(#f5f7fa, #f5f7fa), 
-                    linear-gradient(to right, #00ffc3, #ff00ff); /* Gradient border */
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #333333, #00ffff) 1;
+  background-color: #f5f7fa;
   color: #111111;
   font-weight: 600;
   width: 180px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 8px #00ffff99;
 }
 
 .nav-search input[type="text"]:focus,
 .nav-search input[type="search"]:focus {
   outline: none;
-  border-color: transparent;
-  box-shadow: 0 0 10px #ff4500aa;
+  border-color: #00ffff;
+  box-shadow: 0 0 10px #00ffffaa;
 }
 
 .nav-search button {
@@ -199,12 +197,12 @@ blockquote {
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
-  color: #007bff;
+  color: #333333;
   transition: color 0.3s ease;
 }
 
 .nav-search button:hover {
-  color: #ff4500;
+  color: #00ffff;
 }
 
 /* --- Responsive --- */
