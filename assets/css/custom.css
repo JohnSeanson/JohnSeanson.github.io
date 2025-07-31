@@ -225,6 +225,22 @@ blockquote {
     width: 100%;
   }
 }
+/* Homepage title (site title/logo) */
+.site-title, .site-title a {
+  color: #333333 !important;
+}
+
+/* Blog post titles on homepage and post pages */
+h1.entry-title, h2.entry-title, .page-title, .post-title {
+  color: #333333 !important;
+}
+
+/* Optional: hover effect for post titles if they're links */
+h1.entry-title a:hover,
+h2.entry-title a:hover {
+  color: #00ffff !important;
+  text-decoration: underline;
+}
 
 /* --- Footer --- */
 .site-footer {
