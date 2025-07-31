@@ -19,23 +19,21 @@
 <body class="{{ page.layout }}">
 
   <header role="banner" class="site-header">
-  <nav role="navigation" class="site-nav">
-    <a href="{{ '/' | relative_url }}" class="site-logo">{{ site.title }}</a>
+    <nav role="navigation" class="site-nav">
+      <a href="{{ '/' | relative_url }}" class="site-logo">{{ site.title }}</a>
 
-    <ul class="nav-links">
-      <li><a href="{{ '/posts/' | relative_url }}">Posts</a></li>
-      <li><a href="{{ '/categories/' | relative_url }}">Categories</a></li>
-      <li><a href="{{ '/tags/' | relative_url }}">Tags</a></li>
-    </ul>
+      <div class="nav-links">
+        <a href="{{ '/posts/' | relative_url }}">Posts</a>
+        <a href="{{ '/categories/' | relative_url }}">Categories</a>
+        <a href="{{ '/tags/' | relative_url }}">Tags</a>
+      </div>
 
-    <form action="{{ '/search/' | relative_url }}" method="get" class="nav-search">
-      <input type="text" name="q" placeholder="Search…" aria-label="Search site" />
-      <button type="submit" aria-label="Search">&#128269;</button> <!-- magnifying glass icon -->
-    </form>
-  </nav>
-</header>
-
-
+      <form action="{{ '/search/' | relative_url }}" method="get" class="search-form">
+        <input type="search" name="q" placeholder="Search…" aria-label="Search site" />
+        <button type="submit" aria-label="Search">&#128269;</button>
+      </form>
+    </nav>
+  </header>
 
   <div class="site-main">
     {{ content }}
