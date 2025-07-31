@@ -2,25 +2,26 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: #2c3e50;
+  color: #f0f0f0;
   letter-spacing: 0.03em;
 }
 
 body, p, li {
   font-family: 'Open Sans', sans-serif;
-  color: #444444;
+  color: #f0f0f0;
   line-height: 1.6;
+  background-color: #121212;
 }
 
 /* --- Links --- */
 a {
-  color: #1e90ff;
+  color: #4ea1f3;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #104e8b;
+  color: #88c0ff;
   text-decoration: underline;
 }
 
@@ -45,52 +46,54 @@ a:hover {
 /* --- Callouts --- */
 .callout {
   border-left: 5px solid #1e90ff;
-  background-color: #f0f8ff;
+  background-color: #1a1a1a;
   padding: 1em 1.2em;
   margin: 1.5em 0;
   border-radius: 4px;
-  color: #2c3e50;
+  color: #f0f0f0;
 }
 
 /* --- Code blocks --- */
 .highlight {
-  background-color: #f4f4f4 !important;
+  background-color: #2b2b2b !important;
   border-radius: 6px !important;
   padding: 1em !important;
   font-family: 'Fira Mono', monospace;
+  color: #f0f0f0;
 }
 
 /* --- Hero image style --- */
 .hero-img {
   width: 100%;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   margin: 2em 0;
 }
 
 /* --- Quote box --- */
 blockquote {
   font-size: 1.1em;
-  color: #2c3e50;
+  color: #f0f0f0;
   border-left: 4px solid #1e90ff;
   padding-left: 1em;
   margin: 2em 0;
 }
 
-/* --- Dark-Themed Animated Gradient for Homepage Banner --- */
+/* --- Animated Gradient Background for Homepage Banner --- */
+
+/* Force theme wrappers to allow gradient to show */
+.splash-header .page__hero,
+.splash-header .page__hero--overlay,
+.splash-header .page__hero--title {
+  background: none !important;
+  background-color: transparent !important;
+}
+
+/* Dark-theme animated gradient for splash header */
 .splash-header {
-  background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #0f2027);
+  background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #0f2027) !important;
   background-size: 600% 600%;
   animation: gradientShift 15s ease infinite;
-  min-height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  color: #f0f0f0;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-  position: relative;
-  z-index: 1;
 }
 
 /* Animate the background position to create gradient movement */
