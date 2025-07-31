@@ -352,3 +352,18 @@ body.dark-mode .nav-search input[type="text"] {
 body.dark-mode .nav-search button {
   color: #00cccc !important;
 }
+
+/* Clean focus states without glowing boxes */
+button:focus,
+input:focus,
+a:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Optional: Still allow glow on hover */
+button:hover,
+a:hover {
+  box-shadow: 0 0 8px var(--shadow-accent);
+}
+
