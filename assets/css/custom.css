@@ -4,6 +4,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: #00ffff;
   letter-spacing: 0.03em;
+  line-height: 1.2;
 }
 
 body, p, li {
@@ -11,6 +12,8 @@ body, p, li {
   color: #00ffff;
   line-height: 1.6;
   background-color: #121212;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* --- Links --- */
@@ -37,6 +40,7 @@ a:hover {
   text-decoration: none;
   display: inline-block;
   transition: background-color 0.3s ease;
+  font-size: 1em;
 }
 
 .button:hover, .btn:hover {
@@ -60,11 +64,14 @@ a:hover {
   padding: 1em !important;
   font-family: 'Fira Mono', monospace;
   color: #f0f0f0;
+  overflow-x: auto;
 }
 
 /* --- Hero image style --- */
 .hero-img {
   width: 100%;
+  max-width: 100%;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   margin: 2em 0;
@@ -81,7 +88,7 @@ blockquote {
 
 /* --- Animated Gradient Background for Homepage Banner --- */
 
-/* Force theme wrappers to allow gradient to show */
+/* Ensure default theme hero elements don't override custom background */
 .splash-header .page__hero,
 .splash-header .page__hero--overlay,
 .splash-header .page__hero--title {
@@ -89,22 +96,56 @@ blockquote {
   background-color: transparent !important;
 }
 
-/* Dark-theme animated gradient for splash header */
+/* Dark-theme animated gradient */
 .splash-header {
   background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #0f2027) !important;
   background-size: 600% 600%;
   animation: gradientShift 15s ease infinite;
+  padding: 2em 1em;
+  text-align: center;
 }
 
-/* Animate the background position to create gradient movement */
+/* Animate gradient */
 @keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- Mobile Optimization --- */
+@media screen and (max-width: 768px) {
+  body, p, li {
+    font-size: 1em;
   }
-  50% {
-    background-position: 100% 50%;
+
+  h1 {
+    font-size: 2em;
   }
-  100% {
-    background-position: 0% 50%;
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+
+  .hero-img {
+    margin: 1em 0;
+  }
+
+  .button, .btn {
+    width: 100%;
+    padding: 0.8em;
+    font-size: 1em;
+  }
+
+  .callout, .highlight, blockquote {
+    margin: 1em 0;
+    padding: 0.8em;
+  }
+
+  .splash-header {
+    padding: 3em 1em;
   }
 }
