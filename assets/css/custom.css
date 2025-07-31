@@ -84,6 +84,7 @@ blockquote {
   background: linear-gradient(270deg, #1e3c72, #2a5298, #1e3c72, #2a5298);
   background-size: 800% 800%;
   animation: gradientShift 15s ease infinite;
+  !important;
 }
 
 /* Animate the background position to create gradient movement */
