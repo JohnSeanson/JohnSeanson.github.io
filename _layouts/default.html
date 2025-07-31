@@ -27,30 +27,32 @@
     <li><a href="{{ '/tags/' | relative_url }}">Tags</a></li>
   </ul>
 
-  <form action="{{ '/search/' | relative_url }}" method="get" class="nav-search">
-    <input type="search" name="q" placeholder="Search…" aria-label="Search site" />
-    <button type="submit" aria-label="Search">&#128269;</button>
-  </form>
+  <!-- Updated Search Input (not a form) -->
+  <div class="nav-search">
+    <input type="search" id="search-input" placeholder="Search…" aria-label="Search site" />
+  </div>
 </nav>
 
-  </header>
+</header>
 
-  <div class="site-main">
-    {{ content }}
+<div class="site-main">
+  {{ content }}
+</div>
+
+<footer role="contentinfo" class="site-footer">
+  <div class="wrapper">
+    <p>© {{ site.time | date: '%Y' }} {{ site.title }} — All rights reserved.</p>
   </div>
-
-  <footer role="contentinfo" class="site-footer">
-    <div class="wrapper">
-      <p>© {{ site.time | date: '%Y' }} {{ site.title }} — All rights reserved.</p>
-    </div>
-    <div id="dark-mode-toggle" style="text-align: right; font-size: 0.8rem; cursor: pointer; user-select: none; margin-top: 0.5em;">
+  <div id="dark-mode-toggle" style="text-align: right; font-size: 0.8rem; cursor: pointer; user-select: none; margin-top: 0.5em;">
     <span id="dark-mode-text">Light Mode</span>
-    </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- Optional scripts -->
-  {% include scripts.html %}
-  <script>
+<!-- Optional scripts -->
+{% include scripts.html %}
+
+<!-- Dark Mode Toggle Script -->
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     const toggle = document.getElementById('dark-mode-toggle');
     const text = document.getElementById('dark-mode-text');
@@ -81,11 +83,15 @@
     });
   });
 </script>
+
+<!-- Simple-Jekyll-Search Script -->
 <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+
+<!-- Search Results Container -->
 <ul id="search-results"></ul>
-  
+
 <script>
-  const searchInput = document.querySelector('.nav-search input');
+  const searchInput = document.querySelector('#search-input');
   const resultsContainer = document.querySelector('#search-results');
 
   if (searchInput && resultsContainer) {
@@ -98,13 +104,6 @@
       limit: 10,
       fuzzy: false
     });
-
-    // Prevent form submission if inside a form tag
-    if (searchInput.closest('form')) {
-      searchInput.closest('form').addEventListener('submit', function (e) {
-        e.preventDefault();
-      });
-    }
   }
 </script>
 
