@@ -1,0 +1,12 @@
+<!-- jQuery (optional, if your theme or plugins use it) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+s6k5Pq+WJ7YT8z2+fQm0bf7u4ujvX+yNE6Cq40=" crossorigin="anonymous"></script>
+
+<!-- Your main JavaScript file -->
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+<!-- Additional scripts from site config (if any) -->
+{% if site.body_scripts %}
+  {% for script in site.body_scripts %}
+    <script src="{{ script | relative_url }}"></script>
+  {% endfor %}
+{% endif %}
