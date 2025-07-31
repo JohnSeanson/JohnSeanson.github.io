@@ -82,6 +82,31 @@
   });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
+<ul id="search-results"></ul>
+  
+<script>
+  const searchInput = document.querySelector('.nav-search input');
+  const resultsContainer = document.querySelector('#search-results');
+
+  if (searchInput && resultsContainer) {
+    SimpleJekyllSearch({
+      searchInput: searchInput,
+      resultsContainer: resultsContainer,
+      json: '/search.json',
+      searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+      noResultsText: 'No results found',
+      limit: 10,
+      fuzzy: false
+    });
+
+    // Prevent form submission if inside a form tag
+    if (searchInput.closest('form')) {
+      searchInput.closest('form').addEventListener('submit', function (e) {
+        e.preventDefault();
+      });
+    }
+  }
+</script>
 
 </body>
 </html>
