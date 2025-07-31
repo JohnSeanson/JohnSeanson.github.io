@@ -27,9 +27,10 @@
     <li><a href="{{ '/tags/' | relative_url }}">Tags</a></li>
   </ul>
 
-  <!-- Updated Search Input (not a form) -->
-  <div class="nav-search">
-    <input type="search" id="search-input" placeholder="Search…" aria-label="Search site" />
+  <!-- Updated Search Input and Results Container -->
+  <div class="nav-search" role="search" aria-label="Site search">
+    <input type="search" id="search-input" placeholder="Search…" aria-label="Search site" autocomplete="off" />
+    <ul id="search-results" aria-live="polite" aria-label="Search results"></ul>
   </div>
 </nav>
 
@@ -86,9 +87,6 @@
 
 <!-- Simple-Jekyll-Search Script -->
 <script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
-
-<!-- Search Results Container -->
-<ul id="search-results"></ul>
 
 <script>
   const searchInput = document.querySelector('#search-input');
