@@ -366,4 +366,19 @@ button:hover,
 a:hover {
   box-shadow: 0 0 8px var(--shadow-accent);
 }
+#search-results {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  list-style: none;
+}
+
+#search-results li {
+  margin-bottom: 0.5rem;
+}
+
+#search-results li a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
 
