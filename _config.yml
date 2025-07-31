@@ -1,11 +1,8 @@
-# Site Settings
 title: CyberAdvisor
-description: >-
-  Cybersecurity blog, research, and projects.
-baseurl: "" # Only needed if deploying under a subpath
-url: "https://johnseanson.github.io" # Your GitHub Pages URL
+description: Cybersecurity blog, research, and projects.
+baseurl: ""
+url: "https://johnseanson.github.io"
 
-# Author Info
 author:
   show_title: false
   avatar: "/assets/images/logo.png"
@@ -25,28 +22,23 @@ author:
       icon: "fas fa-fw fa-envelope"
       url: "mailto:Sjohnsonalpha@outlook.com"
 
-# Theme and Appearance
-remote_theme: null
-theme: null
+remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "neon"
 
-# Site Features
 search: true
 markdown: kramdown
 paginate: 5
 paginate_path: "/page:num/"
 permalink: /:categories/:title/
 timezone: America/Chicago
+
 css:
   - /assets/css/custom.css
 
-
-# Pages
 include:
   - _pages
 
 defaults:
-  # Posts
   - scope:
       path: ""
       type: posts
@@ -59,7 +51,6 @@ defaults:
       share: true
       related: true
 
-  # Pages
   - scope:
       path: "_pages"
       type: pages
@@ -67,7 +58,6 @@ defaults:
       layout: single
       author_profile: true
 
-# Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -75,15 +65,14 @@ plugins:
   - jemoji
   - jekyll-include-cache
 
-# Archives
 category_archive:
   type: liquid
   path: /categories/
+
 tag_archive:
   type: liquid
   path: /tags/
 
-# Footer Links
 footer:
   links:
     - label: "GitHub"
