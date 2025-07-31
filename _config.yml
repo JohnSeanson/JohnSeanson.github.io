@@ -22,7 +22,7 @@ author:
       icon: "fas fa-fw fa-envelope"
       url: "mailto:Sjohnsonalpha@outlook.com"
 
-remote_theme: "mmistakes/minimal-mistakes"
+remote_theme: null
 minimal_mistakes_skin: "contrast"
 
 search: true
