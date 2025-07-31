@@ -33,7 +33,7 @@ body {
 
 /* --- Soft container for pages (optional) --- */
 .page {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent off-white */
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   padding: 2em;
@@ -208,14 +208,14 @@ blockquote {
   font-weight: 600;
   width: 180px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 8px var(--accent);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.4); /* softer cyan glow */
 }
 
 .nav-search input[type="text"]:focus,
 .nav-search input[type="search"]:focus {
-  outline: none;
+  outline: none; /* Remove default browser outline */
   border-color: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.6); /* custom focus glow */
 }
 
 .nav-search button {
