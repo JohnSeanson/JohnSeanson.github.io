@@ -1,46 +1,61 @@
 ---
-layout: single
+layout: default
 ---
 
-<article class="page h-entry" itemscope itemtype="http://schema.org/CreativeWork">
+<main id="main" class="page-content" aria-label="Content">
+  <div class="wrapper">
 
-  <header class="page__header">
-    <h1 class="page__title" itemprop="headline">{{ page.title }}</h1>
-    {% if page.excerpt %}
-      <p class="page__excerpt">{{ page.excerpt }}</p>
-    {% endif %}
-    {% if page.date %}
-      <p class="page__meta">
-        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-          {{ page.date | date: "%B %d, %Y" }}
-        </time>
-      </p>
-    {% endif %}
-  </header>
+    <article class="page h-entry" itemscope itemtype="http://schema.org/CreativeWork">
 
-  {% if page.header.overlay_image %}
-    <div class="page__hero--overlay" style="background-image: url('{{ page.header.overlay_image | relative_url }}');">
-      <div class="overlay-content">
-        {% if page.header.caption %}
-          <p class="hero-caption">{{ page.header.caption }}</p>
+      {% if page.header.overlay_image %}
+        <div class="page__hero--overlay" style="background-image: url('{{ page.header.overlay_image | relative_url }}');">
+          <div class="wrapper">
+            <div class="overlay-content">
+              {% if page.header.caption %}
+                <p class="hero-caption">{{ page.header.caption }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <header class="page__header">
+        <h1 class="page__title" itemprop="headline">{{ page.title }}</h1>
+
+        {% if page.excerpt %}
+          <p class="page__excerpt">{{ page.excerpt }}</p>
         {% endif %}
-      </div>
-    </div>
-  {% endif %}
 
-  <div class="page__content e-content" itemprop="text">
-    {{ content }}
+        {% if page.date %}
+          <p class="page__meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+              {{ page.date | date: "%B %d, %Y" }}
+            </time>
+          </p>
+        {% endif %}
+      </header>
+
+      <div class="page__content e-content" itemprop="text">
+        {{ content }}
+      </div>
+
+      {% if page.author_profile or site.author %}
+        <footer class="page__footer">
+          <div class="author-bio">
+            {% if site.author.avatar %}
+              <img class="author-avatar" src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}">
+            {% endif %}
+            <div class="author-details">
+              <h3>Written by {{ site.author.name | default: site.title }}</h3>
+              {% if site.author.bio %}
+                <p>{{ site.author.bio }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </footer>
+      {% endif %}
+
+    </article>
+
   </div>
-
-  <footer class="page__footer">
-    {% if site.author %}
-      <div class="author-bio">
-        <h3>Written by {{ site.author.name }}</h3>
-        {% if site.author.bio %}
-          <p>{{ site.author.bio }}</p>
-        {% endif %}
-      </div>
-    {% endif %}
-  </footer>
-
-</article>
+</main>
