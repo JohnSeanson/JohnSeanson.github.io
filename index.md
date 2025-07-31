@@ -3,6 +3,8 @@ layout: home
 title: "Welcome"
 permalink: /
 header:
+  overlay_image: ""
+  overlay_filter: "0"
   actions:
     - label: "View Projects"
       url: "/projects/"
