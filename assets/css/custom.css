@@ -1,27 +1,23 @@
 /* --- Import Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Fira+Mono&display=swap');
 
-/* --- CSS Variables for Easy Theming --- */
+/* --- CSS Variables --- */
 :root {
-  --main-bg: #f5f7fa;           /* Light grayish-white background */
-  --main-text: #111111;         /* Dark charcoal text */
-  --title-color: #333333;       /* Dark gray for titles/links */
-  --accent: #00ffff;            /* Cyan accent */
-  --accent-hover: #00cccc;      /* Slightly darker cyan for hover */
-  --callout-bg: #e0e7ff;        /* Soft electric blue tint */
-  --quote-bg: #f0ffff;          /* Pale cyan background for quotes */
-  --button-border: #333333;     /* Dark border for buttons */
-  --button-hover-bg: var(--accent);
-  --button-hover-color: #111111;
-  --shadow-accent: rgba(0, 255, 255, 0.27);
+  --main-bg: #f5f7fa;
+  --main-text: #111111;
+  --title-color: #333333;
+  --accent: #00ffff;
+  --accent-hover: #00cccc;
+  --callout-bg: #e0e7ff;
+  --quote-bg: #f0ffff;
+  --button-border: #333333;
 }
 
-/* --- Box sizing for easier layout management --- */
+/* --- Reset & Base Styles --- */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* --- Base styles --- */
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: var(--main-bg);
@@ -31,11 +27,10 @@ body {
   padding: 0;
 }
 
-/* --- Soft container for pages (optional) --- */
+/* --- Page Container --- */
 .page {
-  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent off-white */
+  background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   padding: 2em;
   max-width: 960px;
   margin: 2em auto;
@@ -49,12 +44,6 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.03em;
   line-height: 1.2;
   margin-top: 0;
-}
-
-/* --- Paragraphs and lists --- */
-p, li {
-  font-size: 1rem;
-  /* color inherited from body */
 }
 
 /* --- Links --- */
@@ -81,16 +70,14 @@ a:hover {
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 1em;
-  box-shadow: 0 0 6px var(--shadow-accent);
 }
 
 .button:hover, .btn:hover {
-  background-color: var(--button-hover-bg);
-  color: var(--button-hover-color);
-  border-color: var(--button-hover-bg);
-  box-shadow: 0 0 12px var(--shadow-accent);
+  background-color: var(--accent);
+  color: var(--main-text);
+  border-color: var(--accent);
 }
 
 /* --- Callouts --- */
@@ -101,10 +88,9 @@ a:hover {
   margin: 1.5em 0;
   border-radius: 6px;
   color: var(--main-text);
-  box-shadow: 0 0 8px var(--shadow-accent);
 }
 
-/* --- Code blocks --- */
+/* --- Code Blocks --- */
 .highlight {
   background-color: #222222;
   border-radius: 8px;
@@ -112,10 +98,8 @@ a:hover {
   font-family: 'Fira Mono', monospace;
   color: #f8f8f2;
   overflow-x: auto;
-  box-shadow: 0 0 8px var(--shadow-accent);
 }
 
-/* Custom scrollbar for code blocks */
 .highlight::-webkit-scrollbar {
   height: 8px;
 }
@@ -125,17 +109,16 @@ a:hover {
   border-radius: 4px;
 }
 
-/* --- Hero image style --- */
+/* --- Hero Image --- */
 .hero-img {
   width: 100%;
   max-width: 100%;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 255, 255, 0.4);
   margin: 2em 0;
 }
 
-/* --- Quote box --- */
+/* --- Blockquotes --- */
 blockquote {
   font-size: 1.1em;
   color: #222222;
@@ -144,7 +127,6 @@ blockquote {
   margin: 2em 0;
   background-color: var(--quote-bg);
   border-radius: 6px;
-  box-shadow: 0 0 10px #00ffff44;
 }
 
 /* --- Navigation Bar --- */
@@ -179,7 +161,6 @@ blockquote {
 
 .nav-links li a {
   color: var(--title-color);
-  text-decoration: none;
   font-weight: 700;
   font-size: 1rem;
   transition: color 0.3s ease;
@@ -201,21 +182,21 @@ blockquote {
 .nav-search input[type="search"] {
   padding: 0.4em 0.8em;
   border-radius: 20px;
-  border: 2px solid;
-  border-image: linear-gradient(45deg, var(--button-border), var(--accent)) 1;
+  border: 2px solid #999;
   background-color: var(--main-bg);
   color: var(--main-text);
   font-weight: 600;
   width: 180px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 8px rgba(0, 255, 255, 0.4); /* softer cyan glow */
+  transition: border-color 0.3s ease;
+  outline: none;
+  box-shadow: none;
 }
 
 .nav-search input[type="text"]:focus,
 .nav-search input[type="search"]:focus {
-  outline: none; /* Remove default browser outline */
+  outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.6); /* custom focus glow */
+  box-shadow: none;
 }
 
 .nav-search button {
@@ -254,17 +235,15 @@ blockquote {
   }
 }
 
-/* Homepage title (site title/logo) */
+/* --- Titles and Post Headings --- */
 .site-title, .site-title a {
   color: var(--title-color) !important;
 }
 
-/* Blog post titles on homepage and post pages */
 h1.entry-title, h2.entry-title, .page-title, .post-title {
   color: var(--title-color) !important;
 }
 
-/* Optional: hover effect for post titles if they're links */
 h1.entry-title a:hover,
 h2.entry-title a:hover {
   color: var(--accent) !important;
