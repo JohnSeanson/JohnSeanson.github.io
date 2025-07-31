@@ -29,7 +29,9 @@
 
   <!-- Search Input (results container moved to bottom) -->
   <div class="nav-search" role="search" aria-label="Site search">
-    <input type="search" id="search-input" placeholder="Search…" aria-label="Search site" autocomplete="off" />
+    <div class="search-wrapper">
+      <input type="search" id="search-input" placeholder="Search…" aria-label="Search site" autocomplete="off" />
+    </div>
   </div>
 </nav>
 
@@ -60,7 +62,6 @@
       return;
     }
 
-    // On page load, check localStorage and set theme accordingly
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark-mode');
       text.textContent = 'Dark Mode';
@@ -70,7 +71,6 @@
 
     toggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
-
       if (document.body.classList.contains('dark-mode')) {
         localStorage.setItem('theme', 'dark');
         text.textContent = 'Dark Mode';
@@ -91,6 +91,7 @@
 <script>
   const searchInput = document.querySelector('#search-input');
   const resultsContainer = document.querySelector('#search-results');
+  const searchWrapper = document.querySelector('.search-wrapper');
 
   if (searchInput && resultsContainer) {
     SimpleJekyllSearch({
@@ -108,13 +109,14 @@
       if (query.length > 0) {
         resultsContainer.classList.add('active');
         resultsContainer.style.display = 'block';
+        if (searchWrapper) searchWrapper.classList.add('active');
       } else {
         resultsContainer.classList.remove('active');
         resultsContainer.style.display = 'none';
+        if (searchWrapper) searchWrapper.classList.remove('active');
       }
     });
 
-    // Optional: hide panel on click outside
     document.addEventListener('click', (e) => {
       if (
         !searchInput.contains(e.target) &&
@@ -122,6 +124,7 @@
       ) {
         resultsContainer.classList.remove('active');
         resultsContainer.style.display = 'none';
+        if (searchWrapper) searchWrapper.classList.remove('active');
       }
     });
   }
