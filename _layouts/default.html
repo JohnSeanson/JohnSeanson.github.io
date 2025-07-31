@@ -23,18 +23,18 @@
     <a href="{{ '/' | relative_url }}" class="site-logo">{{ site.title }}</a>
 
     <ul class="nav-links">
-      <li><a href="{{ '/' | relative_url }}">Home</a></li>
       <li><a href="{{ '/posts/' | relative_url }}">Posts</a></li>
       <li><a href="{{ '/categories/' | relative_url }}">Categories</a></li>
       <li><a href="{{ '/tags/' | relative_url }}">Tags</a></li>
     </ul>
 
-    <form action="{{ '/search/' | relative_url }}" method="get" class="search-form" role="search" aria-label="Site search">
-      <input type="search" name="q" placeholder="Search..." aria-label="Search site">
-      <button type="submit">Go</button>
+    <form action="{{ '/search/' | relative_url }}" method="get" class="nav-search">
+      <input type="text" name="q" placeholder="Search…" aria-label="Search site" />
+      <button type="submit" aria-label="Search">&#128269;</button> <!-- magnifying glass icon -->
     </form>
   </nav>
 </header>
+
 
 
   <div class="site-main">
