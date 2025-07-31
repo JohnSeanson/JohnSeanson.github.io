@@ -1,6 +1,6 @@
 # Site Settings
 title: CyberAdvisor
-email: "Sjohnsonalpha@outlook.com"
+# email: "Sjohnsonalpha@outlook.com"
 description: >-
   Cybersecurity blog, research, and projects.
 baseurl: "" # Only needed if deploying under a subpath
