@@ -3,8 +3,8 @@ layout: splash
 title: "Welcome"
 permalink: /
 header:
-  overlay_color: "#000"
-  overlay_filter: "0.5"
+  overlay_color: ""
+  overlay_filter: "0"
   overlay_image: /assets/images/dark-cyber.jpg
   actions:
     - label: "View Projects"
