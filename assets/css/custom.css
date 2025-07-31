@@ -249,6 +249,37 @@ h1.entry-title a:hover, h2.entry-title a:hover {
   text-align: center;
   color: #666666;
   font-size: 0.9rem;
+  position: relative; /* for flex positioning */
+}
+
+/* --- Dark Mode Toggle - Right Aligned and Smaller Text --- */
+.dark-mode-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1em;
+}
+
+.dark-mode-toggle button {
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0.5em;
+}
+
+.dark-mode-toggle button:hover {
+  color: var(--accent);
+}
+
+/* Dark mode version */
+body.dark-mode .dark-mode-toggle button {
+  color: #cccccc;
+}
+body.dark-mode .dark-mode-toggle button:hover {
+  color: #00cccc;
 }
 
 /* --- Responsive --- */
@@ -270,54 +301,4 @@ h1.entry-title a:hover, h2.entry-title a:hover {
   .nav-search input[type="search"] {
     width: 100%;
   }
-}
-
-/* ===========================
-   DARK MODE STYLES
-=========================== */
-body.dark-mode {
-  background-color: #111111;
-  color: #f5f7fa;
-}
-
-body.dark-mode .page,
-body.dark-mode .site-nav,
-body.dark-mode .site-footer {
-  background-color: #1e1e1e;
-  color: #f5f7fa;
-  box-shadow: none;
-}
-
-body.dark-mode .site-title,
-body.dark-mode .site-title a,
-body.dark-mode h1.entry-title,
-body.dark-mode h2.entry-title,
-body.dark-mode .page-title,
-body.dark-mode .post-title,
-body.dark-mode .nav-links li a {
-  color: #f0f0f0 !important;
-}
-
-body.dark-mode a {
-  color: #00cccc;
-}
-body.dark-mode a:hover {
-  color: #00eeee;
-}
-
-body.dark-mode .highlight {
-  background-color: #1e1e1e;
-  color: #f5f7fa;
-}
-
-body.dark-mode .nav-search input[type="search"],
-body.dark-mode .nav-search input[type="text"] {
-  background-color: #222;
-  color: #fff;
-  border-color: #00cccc;
-  box-shadow: none;
-}
-
-body.dark-mode .nav-search button {
-  color: #00cccc;
 }
