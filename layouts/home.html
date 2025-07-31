@@ -1,20 +1,38 @@
 ---
-layout: archive
+layout: default
 ---
 
-{{ content }}
+<div class="page home">
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+  <header class="page__header">
+    <h1 class="page__title">{{ site.title }}</h1>
+    {% if site.description %}
+      <p class="page__subtitle">{{ site.description }}</p>
+    {% endif %}
+  </header>
 
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
+  <div class="page__content">
+    {{ content }}
+  </div>
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html entries=posts type=entries_layout %}
+  <section class="recent-posts">
+    <h2>Latest Posts</h2>
+
+    <ul class="post-list">
+      {% for post in site.posts limit:5 %}
+        <li>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+          {% if post.excerpt %}
+            <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    <p class="view-all">
+      <a href="{{ '/blog/' | relative_url }}" class="btn">View All Posts</a>
+    </p>
+  </section>
+
 </div>
-
-{% include paginator.html %}
