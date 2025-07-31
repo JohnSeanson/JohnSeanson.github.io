@@ -87,8 +87,6 @@ blockquote {
 }
 
 /* --- Animated Gradient Background for Homepage Banner --- */
-
-/* Ensure default theme hero elements don't override custom background */
 .splash-header .page__hero,
 .splash-header .page__hero--overlay,
 .splash-header .page__hero--title {
@@ -96,7 +94,6 @@ blockquote {
   background-color: transparent !important;
 }
 
-/* Dark-theme animated gradient */
 .splash-header {
   background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #0f2027) !important;
   background-size: 600% 600%;
@@ -105,47 +102,14 @@ blockquote {
   text-align: center;
 }
 
-/* Animate gradient */
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* --- Mobile Optimization --- */
-@media screen and (max-width: 768px) {
-  body, p, li {
-    font-size: 1em;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-  h2 {
-    font-size: 1.6em;
-  }
-
-  h3 {
-    font-size: 1.3em;
-  }
-
-  .hero-img {
-    margin: 1em 0;
-  }
-
-  .button, .btn {
-    width: 100%;
-    padding: 0.8em;
-    font-size: 1em;
-  }
-
-  .callout, .highlight, blockquote {
-    margin: 1em 0;
-    padding: 0.8em;
-  }
-
-  .splash-header {
-    padding: 3em 1em;
-  }
-}
+/* --- Overlay Gradient Filter for Hero Header Image --- */
+.page__hero--overlay {
+  position: relative;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(32, 32, 32, 0.3)) !important;
+  b
