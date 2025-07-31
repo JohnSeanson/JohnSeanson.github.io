@@ -19,26 +19,23 @@
 <body class="{{ page.layout }}">
 
   <header role="banner" class="site-header">
-    <nav role="navigation" class="site-nav">
-      <a href="{{ '/' | relative_url }}" class="site-logo">{{ site.title }}</a>
-      <ul class="nav-links">
-        <li><a href="{{ '/posts/' | relative_url }}">Posts</a></li>
-        <li><a href="{{ '/categories/' | relative_url }}">Categories</a></li>
-        <li><a href="{{ '/tags/' | relative_url }}">Tags</a></li>
-      </ul>
+  <nav role="navigation" class="site-nav">
+    <a href="{{ '/' | relative_url }}" class="site-logo">{{ site.title }}</a>
 
-      <form role="search" method="get" class="search-form" action="{{ '/search/' | relative_url }}">
-        <input
-          type="search"
-          name="q"
-          placeholder="Search..."
-          aria-label="Search"
-          required
-        />
-        <button type="submit">🔍</button>
-      </form>
-    </nav>
-  </header>
+    <ul class="nav-links">
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/posts/' | relative_url }}">Posts</a></li>
+      <li><a href="{{ '/categories/' | relative_url }}">Categories</a></li>
+      <li><a href="{{ '/tags/' | relative_url }}">Tags</a></li>
+    </ul>
+
+    <form action="{{ '/search/' | relative_url }}" method="get" class="search-form" role="search" aria-label="Site search">
+      <input type="search" name="q" placeholder="Search..." aria-label="Search site">
+      <button type="submit">Go</button>
+    </form>
+  </nav>
+</header>
+
 
   <div class="site-main">
     {{ content }}
