@@ -8,7 +8,7 @@ url: "https://johnseanson.github.io" # Your GitHub Pages URL
 
 # Author Info
 author:
-  name: "CyberAdvisor"
+  show_title: false
   avatar: "/assets/images/logo.png"
   bio: "Cybersecurity analyst focused on threat intel, pen testing, and secure infrastructure."
   location: "United States"
