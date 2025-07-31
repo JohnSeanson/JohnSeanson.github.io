@@ -169,6 +169,11 @@ blockquote {
   display: inline-block;
 }
 
+.nav-search input[type="text"],
+.nav-search input[type="search"] {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 .nav-search {
   background: transparent;
   padding: 0;
