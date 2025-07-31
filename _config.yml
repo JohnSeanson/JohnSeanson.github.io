@@ -29,7 +29,7 @@ author:
 
 # Theme and Appearance
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "hacker"
+minimal_mistakes_skin: "dark"
 
 # Site Features
 search: true
@@ -49,7 +49,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: splash
+      layout: single
       css: "/assets/css/custom.css"
       author_profile: true
       read_time: true
