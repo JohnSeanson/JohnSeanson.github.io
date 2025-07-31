@@ -26,7 +26,7 @@ author:
       url: "mailto:Sjohnsonalpha@outlook.com"
 
 # Theme and Appearance
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+remote_theme: null
 minimal_mistakes_skin: "neon"
 
 # Site Features
