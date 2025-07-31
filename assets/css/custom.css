@@ -442,6 +442,22 @@ a:hover {
   background-color: var(--callout-bg);
   outline: none;
 }
+/* Search wrapper default style */
+.search-wrapper {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* When results are visible, shift input to the left */
+.search-wrapper.active {
+  transform: translateX(-150px);
+}
+
+/* Optional: Adjust width if needed */
+#search-input {
+  width: 200px;
+  transition: width 0.3s ease;
+}
 
 
 
