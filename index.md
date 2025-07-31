@@ -5,7 +5,6 @@ permalink: /
 header:
   overlay_color: "#00000000"
   overlay_filter: "0"
-  overlay_image: ""
   actions:
     - label: "View Projects"
       url: "/projects/"
