@@ -5,7 +5,7 @@ permalink: /
 header:
   overlay_image: ""
   overlay_filter: "0"
-  caption: "Breaking boundaries in infosec — The CyberAdvisor security lab explores ethical hacking, secure architecture, and threat analysis through hands-on research."
+  excerpt: "Breaking boundaries in infosec — The CyberAdvisor security lab explores ethical hacking, secure architecture, and threat analysis through hands-on research."
   actions:
     - label: "View Projects"
       url: "/projects/"
@@ -22,9 +22,3 @@ feature_row:
     excerpt: "A hands‑on pentest of DVWA using manual techniques and `sqlmap`, plus secure patching."
     url: "https://github.com/JohnSeanson/sql-injection-dvwa-lab"
 ---
-
-Welcome to my cybersecurity-focused blog and portfolio.
-
-## Featured Projects
-
-{% include feature_row %}
