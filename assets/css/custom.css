@@ -592,4 +592,14 @@ body.dark-mode li {
   padding-right: 1rem;
   box-sizing: border-box;
 }
+main#main, 
+.wrapper, 
+.page-content, 
+.page {
+  max-width: 960px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
 
