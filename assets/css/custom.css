@@ -584,5 +584,13 @@ body.dark-mode li {
 .lead {
   margin-bottom: 3rem;
 }
+.wrapper {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
 
 
