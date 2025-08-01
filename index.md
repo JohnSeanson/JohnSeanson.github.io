@@ -22,8 +22,9 @@ feature_row:
 ---
 
 <div class="lead">
-Welcome to my cybersecurity-focused blog and portfolio.
-This is where boundaries are broken in infosec — The CyberAdvisor security lab explores ethical hacking, secure architecture, and threat analysis through hands-on research.
+Welcome to my cybersecurity-focused blog and portfolio.<br>
+This is where boundaries are broken in infosec — <br>
+</b>The CyberAdvisor security lab explores ethical hacking, secure architecture, and threat analysis through hands-on research.
 </div>
 
 
