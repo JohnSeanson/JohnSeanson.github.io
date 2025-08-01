@@ -458,6 +458,31 @@ a:hover {
   width: 200px;
   transition: width 0.3s ease;
 }
+.lead, .lead h1, .lead h3, .lead h5 {
+  color: var(--main-text);
+  transition: color 0.4s ease;
+}
+
+body.dark-mode .lead,
+body.dark-mode .lead h1,
+body.dark-mode .lead h3,
+body.dark-mode .lead h5 {
+  color: #f5f7fa !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--title-color);
+  transition: color 0.4s ease;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #f0f0f0 !important;
+}
 
 
 
