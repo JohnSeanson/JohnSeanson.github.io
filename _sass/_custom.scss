@@ -596,6 +596,16 @@ main#main,
   box-sizing: border-box;
 }
 
+/* Override for container-lg to match wrapper width and center */
+.container-lg {
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  box-sizing: border-box;
+}
+
 /* Spacing for page content children */
 .page-content > * {
   margin-top: 1.5rem;
@@ -609,9 +619,10 @@ main#main,
 
 /* Optional debug borders to check alignment */
 /*
-.wrapper, main#main {
+.wrapper, main#main, .container-lg {
   border: 1px solid red;
 }
 */
+
 
 
