@@ -479,3 +479,28 @@ body.dark-mode p,
 body.dark-mode li {
   color: #f0f0f0 !important;
 }
+.post-logo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background-color: #111;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.post-logo-footer img {
+  height: 64px;
+  width: auto;
+  border-radius: 8px;
+}
+
+.post-logo-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+}
+
