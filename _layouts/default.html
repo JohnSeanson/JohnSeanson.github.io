@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,7 +28,7 @@
     <li><a href="{{ '/pages/about.md' | relative_url }}">About</a></li>
   </ul>
 
-  <!-- Search Input (results container moved to bottom) -->
+  <!-- Search Input -->
   <div class="nav-search" role="search" aria-label="Site search">
     <div class="search-wrapper">
       <input type="search" id="search-input" placeholder="Search…" aria-label="Search site" autocomplete="off" />
@@ -83,52 +83,57 @@
   });
 </script>
 
-<!-- Simple-Jekyll-Search Script -->
-<script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script>
-
-<!-- Search Results Container (now outside nav/header) -->
+<!-- Fuse.js Search -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
 <ul id="search-results" aria-live="polite" aria-label="Search results"></ul>
-
 <script>
-  const searchInput = document.querySelector('#search-input');
-  const resultsContainer = document.querySelector('#search-results');
-  const searchWrapper = document.querySelector('.search-wrapper');
+  document.addEventListener('DOMContentLoaded', function () {
+    const input = document.getElementById('search-input');
+    const resultsList = document.getElementById('search-results');
+    const wrapper = document.querySelector('.search-wrapper');
 
-  if (searchInput && resultsContainer) {
-    SimpleJekyllSearch({
-      searchInput: searchInput,
-      resultsContainer: resultsContainer,
-      json: '/search.json',
-      searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
-      noResultsText: '<li>No results found</li>',
-      limit: 10,
-      fuzzy: false
-    });
+    fetch('/search.json')
+      .then(res => res.json())
+      .then(data => {
+        const fuse = new Fuse(data, {
+          includeScore: true,
+          threshold: 0.4,
+          keys: ['title', 'content', 'tags']
+        });
 
-    searchInput.addEventListener('input', () => {
-      const query = searchInput.value.trim();
-      if (query.length > 0) {
-        resultsContainer.classList.add('active');
-        resultsContainer.style.display = 'block';
-        if (searchWrapper) searchWrapper.classList.add('active');
-      } else {
-        resultsContainer.classList.remove('active');
-        resultsContainer.style.display = 'none';
-        if (searchWrapper) searchWrapper.classList.remove('active');
-      }
-    });
+        input.addEventListener('input', function () {
+          const query = input.value.trim();
+          resultsList.innerHTML = '';
+          if (!query) {
+            resultsList.style.display = 'none';
+            return;
+          }
 
-    document.addEventListener('click', (e) => {
-      if (
-        !searchInput.contains(e.target) &&
-        !resultsContainer.contains(e.target)
-      ) {
-        resultsContainer.classList.remove('active');
-        resultsContainer.style.display = 'none';
-        if (searchWrapper) searchWrapper.classList.remove('active');
-      }
-    });
-  }
+          const results = fuse.search(query);
+          if (results.length === 0) {
+            resultsList.innerHTML = '<li>No results found</li>';
+          } else {
+            results.forEach(result => {
+              const li = document.createElement('li');
+              const a = document.createElement('a');
+              a.href = result.item.url;
+              a.textContent = result.item.title;
+              li.appendChild(a);
+              resultsList.appendChild(li);
+            });
+          }
+
+          resultsList.style.display = 'block';
+        });
+
+        document.addEventListener('click', function (e) {
+          if (!wrapper.contains(e.target) && !resultsList.contains(e.target)) {
+            resultsList.innerHTML = '';
+            resultsList.style.display = 'none';
+          }
+        });
+      });
+  });
 </script>
 
 </body>
