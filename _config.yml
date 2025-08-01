@@ -3,13 +3,12 @@ description: Cybersecurity blog, research, and projects.
 baseurl: ""
 url: "https://johnseanson.github.io"
 
-author_profile: true
 
+author_profile: true
 author:
   name: "Sean Johnson"
   avatar: "/assets/images/logo.png"
   bio: "Cybersecurity analyst focused on threat intel, pen testing, and secure infrastructure."
-  location: "United States"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -23,6 +22,7 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
       url: "mailto:Sjohnsonalpha@outlook.com"
+
 
 
 remote_theme: "mmistakes/minimal-mistakes"
