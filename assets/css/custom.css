@@ -503,4 +503,43 @@ body.dark-mode li {
   font-weight: 600;
   color: #fff;
 }
+.custom-author-profile {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: #111;
+  border-radius: 12px;
+  color: #f1f1f1;
+}
+
+.custom-author-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1rem;
+}
+
+.custom-author-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.custom-author-bio {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.custom-author-links a {
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  color: #f1f1f1;
+  transition: color 0.3s;
+}
+
+.custom-author-links a:hover {
+  color: #00bcd4;
+}
 
