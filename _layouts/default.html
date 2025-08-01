@@ -44,10 +44,22 @@
   <div class="wrapper">
     <p>© {{ site.time | date: '%Y' }} {{ site.title }} — All rights reserved.</p>
   </div>
-  <div id="dark-mode-toggle" style="text-align: right; font-size: 0.8rem; cursor: pointer; user-select: none; margin-top: 0.5em;">
-    <span id="dark-mode-text">Light Mode</span>
+
+  <div class="dark-mode-toggle">
+    <button id="theme-toggle">🌙 Dark Mode</button>
+  </div>
+
+  <div style="position: fixed; bottom: 20px; left: 20px; z-index: 9999;">
+    <a href="https://www.buymeacoffee.com/Code_Caffeine" target="_blank" rel="noopener noreferrer">
+      <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 45px; width: 162px;" />
+    </a>
+  </div>
+
+  <div style="text-align: center; margin-top: 2rem; font-size: 1rem;">
+    🐞 Enjoy my work? Caffeine keeps the bugs away! <a href="https://www.buymeacoffee.com/Code_Caffeine" target="_blank" rel="noopener noreferrer"><strong>Buy me one?</strong></a>
   </div>
 </footer>
+
 
 <!-- Optional scripts -->
 {% include scripts.html %}
