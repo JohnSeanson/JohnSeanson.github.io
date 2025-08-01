@@ -1,0 +1,11 @@
+{% assign author = site.author %}
+
+<div class="custom-author-profile">
+  {% if author.avatar %}
+    <img class="custom-author-avatar" src="{{ author.avatar | relative_url }}" alt="{{ author.name }}">
+  {% endif %}
+
+  <p class="custom-author-name">
+    {{ author.name }}
+  </p>
+</div>
