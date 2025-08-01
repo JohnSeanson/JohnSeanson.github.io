@@ -39,21 +39,11 @@ layout: default
         {{ content }}
       </div>
 
-      {% if page.author_profile or site.author %}
-        <footer class="page__footer">
-          <div class="author-bio">
-            {% if site.author.avatar %}
-              <img class="author-avatar" src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}">
-            {% endif %}
-            <div class="author-details">
-              <h3>Written by {{ site.author.name | default: site.title }}</h3>
-              {% if site.author.bio %}
-                <p>{{ site.author.bio }}</p>
-              {% endif %}
-            </div>
-          </div>
-        </footer>
-      {% endif %}
+{% if page.author_profile or site.author_profile %}
+  <footer class="page__footer">
+    {% include author-profile.html %}
+  </footer>
+{% endif %}
 
     </article>
 
