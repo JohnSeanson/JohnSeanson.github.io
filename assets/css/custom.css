@@ -369,66 +369,34 @@ button:hover,
 a:hover {
   box-shadow: 0 0 8px var(--shadow-accent);
 }
-.nav-search {
-  position: relative; /* already set */
-}
 
+/* === Fuse.js Search Styles === */
+
+/* Search results container */
 #search-results {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 320px;
-  height: 100vh;
-  background-color: var(--main-bg, #1a1a1a);
-  color: var(--text-color, #fff);
-  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.3);
+  display: none; /* hidden by default */
+  position: absolute;
+  top: 100%; /* just below the input */
+  left: 0;
+  width: 100%;
+  max-height: 300px;
   overflow-y: auto;
-  padding: 1rem 1.25rem;
-  z-index: 999;
-  transition: transform 0.3s ease;
-  transform: translateX(100%); /* hidden by default */
-  border-left: 2px solid var(--accent, cyan);
-}
-
-#search-results.active {
-  transform: translateX(0);
-}
-
-#search-results li {
-  margin-bottom: 0.75rem;
+  background: var(--main-bg);
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 204, 204, 0.2);
+  z-index: 200;
+  padding: 0.5rem 1rem;
+  margin-top: 0.25rem;
   list-style: none;
 }
 
-#search-results li a {
-  color: var(--accent, cyan);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-#search-results li a:hover {
-  text-decoration: underline;
-}
-
-}
-
-#search-results:not(:empty) {
-  display: block; /* show only when there is content */
-}
-
-}
-
-#search-results:not(:empty) {
-  display: block; /* show only when there is content */
-}
-
-}
-
-/* Search result items */
+/* Each search result */
 #search-results li {
   margin-bottom: 0.5rem;
 }
 
+/* Link inside each result */
 #search-results li a {
   color: var(--accent);
   text-decoration: none;
@@ -437,14 +405,18 @@ a:hover {
   padding: 0.25em 0;
 }
 
+/* Hover and focus states */
 #search-results li a:hover,
 #search-results li a:focus {
   background-color: var(--callout-bg);
   outline: none;
+  border-radius: 4px;
 }
-/* Search wrapper default style */
+
+/* Positioning wrapper for relative positioning */
 .search-wrapper {
   position: relative;
+  width: 220px; /* match your input width */
   transition: transform 0.3s ease;
 }
 
@@ -453,36 +425,46 @@ a:hover {
   transform: translateX(-150px);
 }
 
-/* Optional: Adjust width if needed */
+/* Search input adjustments */
 #search-input {
-  width: 200px;
-  transition: width 0.3s ease;
-}
-.lead, .lead h1, .lead h3, .lead h5 {
+  width: 100%;
+  padding: 0.4em 0.8em;
+  border-radius: 20px;
+  border: 2px solid #ccc;
+  background-color: var(--main-bg);
   color: var(--main-text);
-  transition: color 0.4s ease;
+  font-weight: 600;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, width 0.3s ease;
 }
 
-body.dark-mode .lead,
-body.dark-mode .lead h1,
-body.dark-mode .lead h3,
-body.dark-mode .lead h5 {
-  color: #f5f7fa !important;
+#search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: var(--title-color);
-  transition: color 0.4s ease;
+/* Override nav-search input width for desktop */
+@media (min-width: 769px) {
+  .search-wrapper {
+    width: 220px;
+  }
+  #search-input {
+    width: 220px;
+  }
 }
 
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode h5,
-body.dark-mode h6 {
-  color: #f0f0f0 !important;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-search {
+    width: 100%;
+    justify-content: center;
+  }
+  .search-wrapper {
+    width: 100%;
+    transform: none !important; /* disable left shift on mobile */
+  }
+  #search-input {
+    width: 100%;
+  }
 }
-
-
-
