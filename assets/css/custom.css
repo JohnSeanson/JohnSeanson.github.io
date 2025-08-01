@@ -581,5 +581,8 @@ body.dark-mode li {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
+.lead {
+  margin-bottom: 3rem;
+}
 
 
