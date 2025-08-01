@@ -568,5 +568,18 @@ body.dark-mode li {
 .custom-author-links a:hover {
   color: #00bcd4; /* your accent cyan */
 }
+.wrapper {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+.page-content > * {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
 
 
