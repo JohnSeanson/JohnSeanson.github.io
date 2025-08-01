@@ -22,12 +22,10 @@ feature_row:
 ---
 
 <div class="lead">
-<h1>Welcome to my cybersecurity-focused blog and portfolio.</h1>
-<h3>This is where boundaries are broken in infosec. </h3>
-<h5>The CyberAdvisor explores ethical hacking, secure architecture, and threat analysis through hands-on research.</h5>
+  <h1>Welcome to my cybersecurity-focused blog and portfolio.</h1>
+  <h3>This is where boundaries are broken in infosec.</h3>
+  <h5>The CyberAdvisor explores ethical hacking, secure architecture, and threat analysis through hands-on research.</h5>
 </div>
-
-
 
 ## Featured Projects
 
