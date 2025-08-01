@@ -6,7 +6,7 @@ url: "https://johnseanson.github.io"
 author_profile: true
 
 author:
-  show_title: false
+  name: "Sean Johnson"
   avatar: "/assets/images/logo.png"
   bio: "Cybersecurity analyst focused on threat intel, pen testing, and secure infrastructure."
   location: "United States"
@@ -23,6 +23,7 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
       url: "mailto:Sjohnsonalpha@outlook.com"
+
 
 remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "contrast"
