@@ -22,3 +22,9 @@ feature_row:
     excerpt: "A hands‑on pentest of DVWA using manual techniques and `sqlmap`, plus secure patching."
     url: "https://github.com/JohnSeanson/sql-injection-dvwa-lab"
 ---
+
+Welcome to my cybersecurity-focused blog and portfolio.
+
+## Featured Projects
+
+{% include feature_row %}
