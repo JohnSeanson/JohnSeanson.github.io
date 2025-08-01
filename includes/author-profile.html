@@ -1,11 +1,27 @@
 {% assign author = site.author %}
+{% assign author = site.author %}
 
 <div class="custom-author-profile">
   {% if author.avatar %}
     <img class="custom-author-avatar" src="{{ author.avatar | relative_url }}" alt="{{ author.name }}">
   {% endif %}
 
-  <p class="custom-author-name">
-    {{ author.name }}
-  </p>
+  {% if author.name %}
+    <p class="custom-author-name">{{ author.name }}</p>
+  {% endif %}
+
+  {% if author.bio %}
+    <p class="custom-author-bio">{{ author.bio }}</p>
+  {% endif %}
+
+  {% if author.links %}
+    <div class="custom-author-links">
+      {% for link in author.links %}
+        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" title="{{ link.label }}">
+          <i class="{{ link.icon }}"></i>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
 </div>
+
