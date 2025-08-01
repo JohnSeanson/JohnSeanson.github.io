@@ -40,6 +40,8 @@ layout: default
       </div>
 
 {% if page.author_profile or site.author_profile %}
+  <pre>Site author: {{ site.author | jsonify }}</pre>
+
   <footer class="page__footer">
     {% include author-profile.html %}
   </footer>
