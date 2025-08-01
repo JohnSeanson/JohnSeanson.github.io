@@ -602,4 +602,10 @@ main#main,
   padding-left: 1rem !important;
   padding-right: 1rem !important;
 }
+.site-main {
+  max-width: 960px;  /* same max width as .page */
+  margin: 2em auto;  /* center horizontally and add vertical margin */
+  padding: 0 1rem;   /* optional side padding */
+  box-sizing: border-box;
+}
 
