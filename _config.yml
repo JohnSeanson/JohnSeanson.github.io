@@ -3,6 +3,8 @@ description: Cybersecurity blog, research, and projects.
 baseurl: ""
 url: "https://johnseanson.github.io"
 
+author_profile: true
+
 author:
   show_title: false
   avatar: "/assets/images/logo.png"
