@@ -5,10 +5,10 @@ permalink: /
 header:
   overlay_image: ""
   overlay_filter: "0"
+  caption: "Breaking boundaries in infosec — The CyberAdvisor security lab explores ethical hacking, secure architecture, and threat analysis through hands-on research."
   actions:
     - label: "View Projects"
       url: "/projects/"
-excerpt: "Breaking boundaries in infosec — The CyberAdvisor security lab explores ethical hacking, secure architecture, and threat analysis through hands-on research."
 
 feature_row:
   - image_path: /assets/images/wireguard.png
