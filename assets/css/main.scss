@@ -4,10 +4,11 @@
 
 @charset "utf-8";
 
-// Import the Minimal Mistakes skin (e.g., neon)
+// Import the Minimal Mistakes skin (e.g., contrast)
 @import "minimal-mistakes/skins/contrast";
 
 // Import the Minimal Mistakes core
 @import "minimal-mistakes";
 
-// Your custom overrides here, or import your custom.css if you want
+// Import your custom styles last to override defaults
+@import "custom";
