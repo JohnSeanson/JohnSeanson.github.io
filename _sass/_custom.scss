@@ -622,7 +622,14 @@ main#main,
 .wrapper, main#main, .container-lg {
   border: 1px solid red;
 }
-*/
+.page__content {
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  box-sizing: border-box;
+}
 
 
 
