@@ -539,6 +539,31 @@ body.dark-mode li {
   color: #ffffff; /* change this from #f1f1f1 to full white */
   transition: color 0.3s;
 }
+/* Center the welcome splash content */
+.page-content .wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.splash,
+.feature_row {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+/* Adjust headline spacing within splash */
+.splash h1,
+.splash p {
+  max-width: 700px;
+  margin: 0.5rem auto;
+}
+
+/* Style featured section labels */
+.splash .actions a {
+  margin: 0.5rem;
+}
 
 .custom-author-links a:hover {
   color: #00bcd4; /* your accent cyan */
