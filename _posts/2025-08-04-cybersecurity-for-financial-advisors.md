@@ -1,7 +1,13 @@
 ---
-layout: post
+layout: single
 title: "Cybersecurity for Financial Advisors: Everyday Mistakes Can Cost You Everything"
 date: 2025-08-04
+minimal_mistakes_skin: dark
+author_profile: true
+read_time: true
+comments: true
+share: true
+related: true
 categories:
   - cybersecurity
   - financial-services
