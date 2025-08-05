@@ -355,7 +355,24 @@ body.dark-mode .nav-search input[type="text"] {
 body.dark-mode .nav-search button {
   color: #00cccc !important;
 }
+/* Dark mode adjustments for callouts and blockquotes */
+body.dark-mode {
+  /* Callouts */
+  .callout {
+    background-color: #003d4d; /* dark teal-ish */
+    color: #a0e7e9; /* light cyan */
+    border-left-color: #00cccc; /* bright accent */
+    box-shadow: 0 0 12px rgba(0, 204, 204, 0.6);
+  }
 
+  /* Blockquotes */
+  blockquote {
+    background-color: #0a2a2e; /* darker blue-green */
+    color: #c0f0f4; /* light cyan text */
+    border-left-color: #00cccc; /* accent */
+    box-shadow: 0 0 12px rgba(0, 204, 204, 0.7);
+  }
+}
 /* Clean focus states without glowing boxes */
 button:focus,
 input:focus,
