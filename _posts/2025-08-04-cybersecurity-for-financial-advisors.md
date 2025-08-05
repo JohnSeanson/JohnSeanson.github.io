@@ -1,7 +1,6 @@
 ---
 layout: single
 title: "Cybersecurity for Financial Advisors: Everyday Mistakes Can Cost You Everything"
-date: 2025-08-04
 categories: [cybersecurity, financial-services, compliance]
 tags: [cybersecurity, financial-advisors, SEC, FINRA, zero-trust, solo-practices, real-cases]
 author: Sean Johnson
