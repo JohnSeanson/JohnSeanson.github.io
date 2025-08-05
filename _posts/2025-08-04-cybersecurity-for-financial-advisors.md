@@ -2,26 +2,16 @@
 layout: single
 title: "Cybersecurity for Financial Advisors: Everyday Mistakes Can Cost You Everything"
 date: 2025-08-04
+categories: [cybersecurity, financial-services, compliance]
+tags: [cybersecurity, financial-advisors, SEC, FINRA, zero-trust, solo-practices, real-cases]
+author: Sean Johnson
+excerpt: "From coffee shop meetings to client thumb drives, everyday advisor habits can quietly expose client data. Here's what to stop doing today—and why it matters."
 minimal_mistakes_skin: dark
 author_profile: true
 read_time: true
 comments: true
 share: true
 related: true
-categories:
-  - cybersecurity
-  - financial-services
-  - compliance
-tags:
-  - cybersecurity
-  - financial-advisors
-  - SEC
-  - FINRA
-  - zero-trust
-  - solo-practices
-  - real-cases
-author: John Seanson
-excerpt: "From coffee shop meetings to client thumb drives, everyday advisor habits can quietly expose client data. Here's what to stop doing today—and why it matters."
 ---
 
 > **“Cybersecurity must be treated like compliance.”**
