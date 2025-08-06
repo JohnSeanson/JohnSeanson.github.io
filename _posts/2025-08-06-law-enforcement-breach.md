@@ -37,7 +37,7 @@ This breach not only jeopardized ongoing investigations, but also raised urgent 
 In April 2024, Medusa, a ransomware group believed to operate out of Russia, infiltrated EBRSO's network. The attackers stole over 90 gigabytes of data, including personal details such as names, phone numbers, and Social Security numbers of confidential informants. After demanding a $300,000 ransom, the attackers initially leaked a small data sample, escalating fears within the agency and the community.
 
  
-> *Confidential informants rely on the trust and protection of law enforcement. Exposing their identities can endanger their lives and the integrity of investigations.*
+> **Confidential informants rely on the trust and protection of law enforcement. Exposing their identities can endanger their lives and the integrity of investigations.**
 
 Eventually, the full dataset—over 65,000 files—was leaked publicly after being obtained by the nonprofit DDoSecrets and passed to news outlet Straight Arrow News. This forced the sheriff’s office to confront a harsh reality: critical data security measures had been insufficient to protect the people and cases behind the numbers.
 
@@ -56,7 +56,7 @@ EBRSO is not alone. Law enforcement and government agencies have become increasi
 - **San Francisco Police Department (2023):** Experienced a breach compromising internal communications and informant identities, temporarily halting sensitive operations.  
   ↳ [San Francisco Chronicle](https://www.sfchronicle.com/crime/article/)
 
-> **“Cyberattacks on law enforcement don’t just threaten IT systems—they undermine the rule of law.”**
+> **Cyberattacks on law enforcement don’t just threaten IT systems—they undermine the rule of law.**
 
 These cases illustrate a growing risk profile for public safety organizations that must simultaneously protect community safety and sensitive information in an increasingly hostile cyber environment.
 
@@ -74,7 +74,7 @@ These cases illustrate a growing risk profile for public safety organizations th
 
 The human impact of the EBRSO breach is still unfolding. Informants' lives may be at risk. Investigations may be compromised. Trust in local law enforcement has taken a hit.
 
-> *“Cybersecurity isn’t just a technical issue—it’s a public safety issue.”*
+> **Cybersecurity isn’t just a technical issue—it’s a public safety issue.**
 
 When the people who assist law enforcement are exposed, the ripple effect is enormous—not just within the department but across communities already skeptical of authority.
 
