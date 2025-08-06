@@ -53,6 +53,9 @@ defaults:
       comments: false
       share: true
       related: true
+      header:
+        overlay: true
+        show_overlay_excerpt: true
 
   - scope:
       path: "_pages"
