@@ -6,6 +6,14 @@ categories: [cybersecurity, threat-intelligence, north-korea]
 tags: [North Korea, cyber-espionage, threat-intelligence, remote-work, DPRK]
 author: John Seanson
 excerpt: "A rare testimony from a North Korean defector reveals how the regime embeds IT workers into global tech jobs—funneling wages and access back to Pyongyang."
+
+header:
+  image: /assets/images/nk-hacker.png
+  alt: "Illustration of a North Korean hacker at a computer under surveillance."
+  caption: "A defector reveals North Korea's covert tech workforce operations."
+  overlay_filter: "0.3" # optional, dims the image for better text readability
+
+image: /assets/images/nk-hacker.png
 ---
 
 ## A Human Weapon in North Korea’s Cyber Arsenal
